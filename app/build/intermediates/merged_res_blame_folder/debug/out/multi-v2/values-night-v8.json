@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
+            "outputFile": "C:\\Users\\ivan0\\Downloads\\foobar-deliverer-main\\foobar-deliverer-main\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
             "map": [
                 {
                     "source": "C:\\Users\\ivan0\\.gradle\\caches\\transforms-2\\files-2.1\\033fa273db51aa87cae83056de67d807\\material-1.1.0\\res\\values-night-v8\\values-night-v8.xml",
@@ -21,24 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ivan0\\.gradle\\caches\\transforms-2\\files-2.1\\1ad22339d77520f6259d6f3d4bd5b1bc\\appcompat-1.1.0\\res\\values-night-v8\\values-night-v8.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,125,209,293,389,491,593,687",
-                        "endColumns": "69,83,83,95,101,101,93,88",
-                        "endOffsets": "120,204,288,384,486,588,682,771"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,55",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,125,209,293,389,491,593,4164",
-                        "endColumns": "69,83,83,95,101,101,93,88",
-                        "endOffsets": "120,204,288,384,486,588,682,4248"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "source": "C:\\Users\\ivan0\\Downloads\\foobar-deliverer-main\\foobar-deliverer-main\\app\\src\\main\\res\\values-night\\themes.xml",
                     "from": {
                         "startLines": "18,17,28,27,14,13,22,21,10,9,4,3",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
@@ -54,6 +37,23 @@
                         "endLines": "9,10,31,32,33,34,37,38,56,57,60,61",
                         "endColumns": "69,78,12,68,75,90,12,82,116,125,12,118",
                         "endOffsets": "752,831,1813,1882,1958,2049,2214,2297,4365,4491,4695,4814"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ivan0\\.gradle\\caches\\transforms-2\\files-2.1\\1ad22339d77520f6259d6f3d4bd5b1bc\\appcompat-1.1.0\\res\\values-night-v8\\values-night-v8.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,125,209,293,389,491,593,687",
+                        "endColumns": "69,83,83,95,101,101,93,88",
+                        "endOffsets": "120,204,288,384,486,588,682,771"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,55",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,125,209,293,389,491,593,4164",
+                        "endColumns": "69,83,83,95,101,101,93,88",
+                        "endOffsets": "120,204,288,384,486,588,682,4248"
                     }
                 }
             ]

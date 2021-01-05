@@ -1,4 +1,5 @@
-com/foobarust/deliverer/MainActivity.java
- com.foobarust.deliverer.MainActivity
 com/foobarust/deliverer/BuildConfig.java
  com.foobarust.deliverer.BuildConfig
+com/foobarust/deliverer/MainActivity.java
+ com.foobarust.deliverer.MainActivity
+ com.foobarust.deliverer.MainActivity$1

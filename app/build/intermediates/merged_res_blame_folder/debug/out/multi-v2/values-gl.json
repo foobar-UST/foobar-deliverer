@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-gl\\values-gl.xml",
+            "outputFile": "C:\\Users\\ivan0\\Downloads\\foobar-deliverer-main\\foobar-deliverer-main\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-gl\\values-gl.xml",
             "map": [
                 {
                     "source": "C:\\Users\\ivan0\\.gradle\\caches\\transforms-2\\files-2.1\\1ad22339d77520f6259d6f3d4bd5b1bc\\appcompat-1.1.0\\res\\values-gl\\values-gl.xml",

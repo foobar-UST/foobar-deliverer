@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v23\\values-night-v23.xml",
+            "outputFile": "C:\\Users\\ivan0\\Downloads\\foobar-deliverer-main\\foobar-deliverer-main\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v23\\values-night-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\values-night-v23\\themes.xml",
+                    "source": "C:\\Users\\ivan0\\Downloads\\foobar-deliverer-main\\foobar-deliverer-main\\app\\src\\main\\res\\values-night-v23\\themes.xml",
                     "from": {
                         "startLines": "15,14,27,26,9,8,21,20,3,2",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
