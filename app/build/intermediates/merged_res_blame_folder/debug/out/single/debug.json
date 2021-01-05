@@ -1,0 +1,422 @@
+[
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_default_pager_dot.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\default_pager_dot.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable-night-hdpi_placeholder_card.png.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\generated\\res\\pngs\\debug\\drawable-night-hdpi\\placeholder_card.png"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_remove.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_remove.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\anim_slide_out_left.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\anim\\slide_out_left.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_undraw_eating_together.png.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\undraw_eating_together.png"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_star.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_star.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_clear.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_clear.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ripple_effect.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ripple_effect.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_undraw_online_groceries.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\undraw_online_groceries.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_attach_money.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_attach_money.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_shopping_bag.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_shopping_bag.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_user.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_user.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_placeholder_card.png.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\placeholder_card.png"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_search.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_scrim_fade_top.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\scrim_fade_top.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_scrim_fade_bottom.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\scrim_fade_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_add.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_add.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_account.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_account.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_info.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_info.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_fastfood.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_fastfood.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_whatshot.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_whatshot.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_location_on.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_location_on.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable-night-xhdpi_placeholder_card.png.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\generated\\res\\pngs\\debug\\drawable-night-xhdpi\\placeholder_card.png"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_event.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_event.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_exit_to_app.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_exit_to_app.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_tab_pager_selector.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\tab_pager_selector.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_placeholder_card.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\placeholder_card.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_undraw_eating_together.png.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\undraw_eating_together.png"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_email.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_email.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_add_box.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_add_box.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\anim_slide_in.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\anim\\slide_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\anim_slide_out_right.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\anim\\slide_out_right.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_undraw_eating_together.png.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\undraw_eating_together.png"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_splash_background.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\splash_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\anim_slide_out.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\anim\\slide_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shape_circle.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\shape_circle.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_arrow_forward.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_arrow_forward.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_remove_circle_outline.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_remove_circle_outline.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_selected_pager_dot.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\selected_pager_dot.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_placeholder_card.png.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\placeholder_card.png"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable-night-anydpi-v24_placeholder_card.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\generated\\res\\pngs\\debug\\drawable-night-anydpi-v24\\placeholder_card.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_create.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_create.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_undraw_eating_together.png.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\undraw_eating_together.png"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_favorite.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_favorite.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_placeholder_card.png.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\placeholder_card.png"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\color_material_on_surface_emphasis_high_disabled.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\color\\material_on_surface_emphasis_high_disabled.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_favorite_border.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_favorite_border.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_restaurant.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_restaurant.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_scrim_fade.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\scrim_fade.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_undraw_eating_together.png.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\undraw_eating_together.png"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable-night-xxxhdpi_placeholder_card.png.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\generated\\res\\pngs\\debug\\drawable-night-xxxhdpi\\placeholder_card.png"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_undraw_eating_together.png.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\undraw_eating_together.png"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\color_material_secondary_emphasis_high_disabled.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\color\\material_secondary_emphasis_high_disabled.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shape_seller_type.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\shape_seller_type.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_arrow_back.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_arrow_back.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_local_shipping.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_local_shipping.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_undraw_eating_together.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\undraw_eating_together.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_placeholder_card.png.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\placeholder_card.png"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_loyalty.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_loyalty.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_notification_important.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_notification_important.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_done.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_done.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_refresh.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_refresh.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_navigate_next.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_navigate_next.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable-night-mdpi_placeholder_card.png.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\generated\\res\\pngs\\debug\\drawable-night-mdpi\\placeholder_card.png"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_place.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_place.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable-night-xxhdpi_placeholder_card.png.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\generated\\res\\pngs\\debug\\drawable-night-xxhdpi\\placeholder_card.png"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\anim_blinking.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\anim\\blinking.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable-night_default_pager_dot.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable-night\\default_pager_dot.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_copyright.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_copyright.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_error_outline.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_error_outline.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_mark_email_read.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_mark_email_read.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_access_time.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_access_time.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_placeholder_card.png.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\placeholder_card.png"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bottom_sheet_pill.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\bottom_sheet_pill.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_explore.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_explore.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_person_outline.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_person_outline.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable-night-ldpi_placeholder_card.png.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\generated\\res\\pngs\\debug\\drawable-night-ldpi\\placeholder_card.png"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\anim_slide_in_right.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\anim\\slide_in_right.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_event_available.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_event_available.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\font_montserrat.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\font\\montserrat.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_map.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_map.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_undraw_takeout_boxes.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\undraw_takeout_boxes.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_person.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_person.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_splash_title.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\splash_title.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_more_horiz.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_more_horiz.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_placeholder_card.png.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\placeholder_card.png"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_live_help.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_live_help.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_remove_shopping_cart.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_remove_shopping_cart.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_directions_run.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_directions_run.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\res\\merged\\debug\\anim_slide_in_left.xml.flat",
+        "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\anim\\slide_in_left.xml"
+    }
+]

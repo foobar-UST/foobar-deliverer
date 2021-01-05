@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="motion_duration_default">300</integer>
+    <integer name="motion_duration_medium">225</integer>
+    <integer name="motion_duration_small">175</integer>
+
+    <integer name="banner_interval">5000</integer>
+    <integer name="banner_scroll_duration">1000</integer>
+</resources>

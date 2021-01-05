@@ -1,0 +1,28 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v23\\values-night-v23.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\ivan0\\Downloads\\FoobarDeliverer\\app\\src\\main\\res\\values-night-v23\\themes.xml",
+                    "from": {
+                        "startLines": "15,14,27,26,9,8,21,20,3,2",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "877,794,1506,1433,546,451,1197,1110,178,55",
+                        "endLines": "18,14,30,26,12,8,24,20,6,2",
+                        "endColumns": "12,82,12,72,12,94,12,86,12,122",
+                        "endOffsets": "1104,872,1726,1501,788,541,1427,1192,445,173"
+                    },
+                    "to": {
+                        "startLines": "2,6,7,11,12,16,17,21,22,26",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,287,370,595,668,915,1010,1245,1332,1604",
+                        "endLines": "5,6,10,11,15,16,20,21,25,26",
+                        "endColumns": "12,82,12,72,12,94,12,86,12,122",
+                        "endOffsets": "282,365,590,663,910,1005,1240,1327,1599,1722"
+                    }
+                }
+            ]
+        }
+    ]
+}
