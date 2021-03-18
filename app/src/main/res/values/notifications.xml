@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notification_channel_default_id" translatable="false">default_notification_channel</string>
+    <string name="notification_channel_default_name">Default</string>
+
+    <string name="notification_channel_upload_id" translatable="false">upload_notification_channel</string>
+    <string name="notification_channel_upload_name">Upload</string>
+
+    <string name="notification_channel_tracking_id" translatable="false">tracking_notification_channel</string>
+    <string name="notification_channel_tracking_name">Location Tracking</string>
+
+    <string name="notification_upload_user_photo_title">Upload User Photo</string>
+    <string name="notification_upload_user_photo_body">Uploading</string>
+
+    <string name="notification_tracking_title">Tracking location</string>
+    <string name="notification_tracking_body">Your current location will be uploaded.</string>
+    <string name="notification_tracking_action_launch">Open</string>
+    <string name="notification_tracking_action_cancel">Cancel</string>
+
+</resources>

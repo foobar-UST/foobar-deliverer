@@ -2,13 +2,14 @@
 <resources>
     <style name="ThemeOverlay.Foobar.Dialog.Fullscreen.DayNight.Search" parent="ThemeOverlay.Foobar.Dialog.Fullscreen.DayNight">
         <item name="android:windowSoftInputMode">stateAlwaysVisible</item>
-        <item name="android:windowBackground">?attr/scrimBackground</item>
+        <item name="android:windowBackground">@color/white_alpha_60</item>
     </style>
     <style name="ThemeOverlay.Foobar.Dialog.Fullscreen.DayNight" parent="ThemeOverlay.Foobar.Dialog.Fullscreen"/>
     <style name="ThemeOverlay.Foobar.Dialog.Fullscreen" parent="ThemeOverlay.MaterialComponents.Dialog">
         <item name="android:windowIsFloating">false</item>
         <item name="android:colorBackground">@color/background_light</item>
         <item name="android:windowBackground">?android:colorBackground</item>
+        <item name="materialButtonStyle">@style/Widget.MaterialComponents.Button</item>
     </style>
 
     <style name="ThemeOverlay.Foobar.AlertDialog" parent="@style/ThemeOverlay.MaterialComponents.MaterialAlertDialog">
@@ -20,11 +21,8 @@
         <item name="bottomSheetStyle">@style/Widget.Foobar.BottomSheet</item>
         <item name="android:windowIsFloating">false</item>
         <item name="android:windowSoftInputMode">adjustPan</item>
-        <!--item name="android:windowBackground">?attr/scrimBackground</item-->
+        <item name="android:backgroundDimAmount">0.32</item>
     </style>
-
-    <style name="Theme.Foobar.Onboarding.DayNight" parent="Theme.Foobar.Onboarding"/>
-    <style name="Theme.Foobar.Onboarding" parent="Theme.Foobar"/>
 
     <style name="Theme.Foobar.Auth.DayNight" parent="Theme.Foobar.Auth"/>
     <style name="Theme.Foobar.Auth" parent="Theme.Foobar"/>
@@ -36,8 +34,8 @@
 
     <style name="Theme.Foobar.DayNight" parent="Theme.Foobar"/>
     <style name="Theme.Foobar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/maroon_500</item>
-        <item name="colorPrimaryVariant">@color/maroon_700</item>
+        <item name="colorPrimary">@color/mint_500</item>
+        <item name="colorPrimaryVariant">@color/mint_300</item>
         <item name="colorSecondary">@color/mint_500</item>
         <item name="colorSecondaryVariant">@color/mint_300</item>
         <item name="colorError">@color/red_500</item>
@@ -73,22 +71,26 @@
         <item name="motionInterpolatorIncoming">@android:interpolator/decelerate_cubic</item>
         <item name="motionInterpolatorOutgoing">@android:interpolator/accelerate_cubic</item>
 
-        <item name="scrimBackground">@color/white_alpha_20</item>
-
         <item name="bottomSheetDialogTheme">@style/ThemeOverlay.Foobar.BottomSheetDialog.DayNight</item>
         <item name="alertDialogTheme">@style/ThemeOverlay.Foobar.AlertDialog</item>
 
         <!-- Styles -->
         <item name="radioButtonStyle">@style/Widget.Foobar.RadioButton</item>
-        <item name="checkboxStyle">@style/Widget.Foobar.CheckBox</item>
+        <!--item name="checkboxStyle">@style/Widget.Foobar.CheckBox</item-->
         <item name="bottomSheetStyle">@style/Widget.Foobar.BottomSheet</item>
-        <item name="sellerActionChipStyle">@style/Widget.Foobar.Chip.SellerAction</item>
+        <item name="actionChipStyle">@style/Widget.Foobar.Chip.Action</item>
+        <item name="ratingBarStyle">@style/Widget.Foobar.RatingBar</item>
+        <item name="ratingBarStyleIndicator">@style/Widget.Foobar.RatingBar.Indicator</item>
 
+        <!-- System -->
         <item name="android:statusBarColor">@color/black</item>
         <item name="android:windowBackground">?android:colorBackground</item>
 
-        <item name="cartBackgroundColor">@color/maroon_400</item>
+        <!-- Others -->
         <item name="dividerAlphaRatio">0.12</item>
+        <item name="listScrimBottomStartColor">?android:attr/colorBackground</item>
+        <item name="listScrimBottomEndColor">@android:color/transparent</item>
+
     </style>
 
 </resources>

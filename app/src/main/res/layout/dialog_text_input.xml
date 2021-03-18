@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/spacing_large"
+    android:paddingEnd="@dimen/spacing_large"
+    android:paddingBottom="@dimen/spacing_large">
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.Design.TextInputLayout"
+        android:id="@+id/value_text_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:prefixTextAppearance="?attr/textAppearanceBody1">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/value_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceBody1"
+            tools:text="Hello World"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</FrameLayout>

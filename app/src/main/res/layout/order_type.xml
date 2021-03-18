@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/seller_type_text_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/spacing_medium"
+    android:paddingBottom="@dimen/spacing_medium"
+    android:paddingStart="@dimen/spacing_xmedium"
+    android:paddingEnd="@dimen/spacing_xmedium"
+    android:textColor="?attr/colorOnSecondary"
+    android:textAppearance="?attr/textAppearanceOverline"
+    android:background="@drawable/shape_round_rect"
+    tools:text="On Campus"
+    tools:backgroundTint="@color/mint_100"/>

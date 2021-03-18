@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/spacing_large">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/avatar_image_view"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Foobar.Circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/avatar_add_image_view"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_add_circle"
+        android:importantForAccessibility="no"
+        app:tint="?attr/colorPrimary"
+        app:layout_constraintCircle="@id/avatar_image_view"
+        app:layout_constraintCircleRadius="55dp"
+        app:layout_constraintCircleAngle="135"
+        tools:ignore="MissingConstraints"/>
+
+    <TextView
+        android:id="@+id/username_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:textAppearance="?attr/textAppearanceHeadline5"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/avatar_image_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="user"/>
+
+    <TextView
+        android:id="@+id/email_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_xmedium"
+        android:textAppearance="?attr/textAppearanceSubtitle2"
+        android:textColor="@color/material_on_background_emphasis_medium"
+        app:layout_constraintTop_toBottomOf="@id/username_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="user@connect.ust.hk"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,209 +1,67 @@
 <resources>
-    <!-- System -->
-    <string name="app_name">Foobar++</string>
+    <string name="app_name">Delivery</string>
 
-    <string name="shortcut_seller_short_label">Restaurants</string>
-    <string name="shortcut_seller_long_label">Restaurants</string>
-    <string name="shortcut_order_short_label">Order</string>
-    <string name="shortcut_order_long_label">Order</string>
-    <string name="shortcut_explore_short_label">Explore</string>
-    <string name="shortcut_explore_long_label">Explore</string>
+    <string name="nav_title_order">Order</string>
+    <string name="nav_title_location">Location</string>
+    <string name="nav_title_settings">Settings</string>
+    <string name="nav_title_profile">Profile</string>
+    <string name="nav_title_license">License</string>
 
-    <string name="notification_channel_default_id" translatable="false">default_notification_channel</string>
-    <string name="notification_channel_default_name">Default</string>
-    <string name="notification_channel_upload_id" translatable="false">upload_notification_channel</string>
-    <string name="notification_channel_upload_name">Upload</string>
-    <string name="notification_item_upload_user_photo_title">User Photo</string>
-    <string name="notification_item_upload_user_photo_body">Uploading in progress</string>
-
-    <!-- Actions -->
-    <string name="action_cancel">Cancel</string>
-    <string name="action_save">Save</string>
-    <string name="action_clear_text">Clear Text</string>
-    <string name="action_search">Search</string>
-    <string name="action_detail">Detail</string>
+    <string name="error_resolve_activity_failed">No application to handle this action.</string>
 
     <!-- Error layout -->
     <string name="load_error_retry">Retry</string>
 
-    <!-- Paging -->
-    <string name="load_state_retry">Retry</string>
+    <!-- Permission -->
+    <string name="request_permission_message">Location permission needed for delivery tracking.</string>
+    <string name="request_permission_action_settings">Settings</string>
 
-    <!-- Error -->
-    <string name="error_resolve_activity_failed">No application to handle this action.</string>
+    <!-- Auth -->
+    <string name="auth_input_title">Login</string>
+    <string name="auth_input_description">Login using your Foobar++ delivery account.</string>
+    <string name="auth_input_hint_email">Email</string>
+    <string name="auth_input_hint_password">Password</string>
+    <string name="auth_input_confirm">Login</string>
+    <string name="auth_input_skip">Skip</string>
+    <string name="auth_input_email_empty">Please enter your email to login.</string>
+    <string name="auth_input_password_empty">Please enter your password to login.</string>
 
-    <!-- Loading Error -->
-    <string name="loading_error_title">No connection</string>
-    <string name="loading_error_content">Please check your internet connection and try again.</string>
-
-    <!-- Sign in -->
-    <string name="signin_input_title">Login</string>
-    <string name="signin_input_description">Login using your ITSC username.</string>
-    <string name="signin_input_username_hint">Username</string>
-    <string name="signin_input_email_domain_hint">Domain</string>
-    <string name="signin_input_confirm">Login</string>
-    <string name="signin_input_skip_sigin">Skip</string>
-    <string name="signin_input_username_empty">Please enter your username to login.</string>
-    <string name="signin_verify_title">We have sent you a sign-in link</string>
-    <string name="signin_verify_description">Please check your ITSC mailbox.</string>
-    <string name="signin_verify_no_email">Did\'t receive the email?&#160;</string>
-    <string name="signin_verify_resend_email">Resend Email</string>
-    <string name="signin_error">Sign-in error. Please try again.</string>
-    <string name="signin_cancel">Sign-in canceled.</string>
-    <string name="signin_auth_email_sent">Authentication email is sent.</string>
-    <string name="signin_auth_email_resend_interval">Please try a few seconds later.</string>
-
-    <!-- Onboarding -->
-    <string name="onboarding_get_started">Get Started</string>
-    <string name="onboarding_browse_food_title">Browse your favourite food</string>
-    <string name="onboarding_browse_food_description">Find your favourite food in campus restaurants with the latest discounts and promotions</string>
-    <string name="onboarding_group_orders_title">Create group orders</string>
-    <string name="onboarding_group_orders_description">You can create group orders with your friends and colleague to enjoy better discounts</string>
-    <string name="onboarding_pick_up_delivery_title">Pick up or delivery</string>
-    <string name="onboarding_pick_up_delivery_description">You can choose our fast delivery service or pick up your orders in person</string>
-
-    <!-- Fragment Label -->
-    <string name="fragment_label_seller">Restaurants</string>
-    <string name="fragment_label_seller_search">Search Restaurants</string>
-    <string name="fragment_label_order">Order</string>
-    <string name="fragment_label_order_history">My Orders</string>
-    <string name="fragment_label_explore">Explore</string>
-    <string name="fragment_label_settings">Settings</string>
-    <string name="fragment_label_notification">Notifications</string>
-    <string name="fragment_label_license">License</string>
-    <string name="fragment_label_favorite">Favourite</string>
-    <string name="fragment_label_profile">My Profile</string>
+    <string name="auth_verify_title">Signing in</string>
+    <string name="auth_verify_description">Please wait while signing in.</string>
+    <string name="auth_verify_no_email">Didn\'t receive the email?&#160;</string>
+    <string name="auth_verify_resend_email">Resend Email</string>
+    <string name="auth_error_message">Sign-in error. Please try again.</string>
+    <string name="auth_cancel_message">Sign-in canceled.</string>
+    <string name="auth_signed_in_message">Already signed in.</string>
+    <string name="auth_email_resend_timer_message">Please try a few seconds later.</string>
+    <string name="auth_signed_out_message">Auth error.</string>
+    <string name="auth_not_signed_in_message">Not signed in.</string>
 
     <!-- Settings -->
-    <string name="settings_account_edit_profile">View My Profile</string>
-    <string name="settings_account_guest">Guest</string>
-    <string name="settings_account_sign_in">Click to Sign In</string>
-    <string name="settings_section_notifications_title">Notifications</string>
+    <string name="settings_account_edit_profile">View Detail</string>
+    <string name="settings_section_employed_by">Employed By</string>
     <string name="settings_section_contact_us_title">Contact Us</string>
     <string name="settings_section_license_title">License</string>
-    <string name="settings_section_features_title">Features</string>
     <string name="settings_section_sign_out_title">Sign Out</string>
-    <string name="settings_section_favorite_title">My Favourite</string>
-    <string name="settings_section_orders_title">My Orders</string>
 
     <!-- Profile -->
+    <string name="profile_toolbar_title">My Profile</string>
     <string name="profile_edit_field_name">Name</string>
     <string name="profile_edit_field_phone_number">Phone Number</string>
     <string name="profile_edit_field_input_not_set">Not Set</string>
     <string name="profile_edit_field_input_invalid">Invalid input.</string>
-    <string name="profile_require_data_for_ordering">Profile data have to be set before using ordering service.</string>
-    <string name="profile_user_photo_uploaded_message">Photo uploaded.</string>
+    <string name="profile_require_data_for_delivery">Profile data have to be set before delivery.</string>
+    <string name="profile_user_detail_updated">Profile Updated.</string>
 
     <!-- Sign out -->
     <string name="sign_out_dialog_title">Sign Out</string>
     <string name="sign_out_dialog_message">Do you want to sign out with the current account?</string>
 
-    <!-- Input dialogs -->
-    <string name="text_input_title_prefix">Enter your&#160;</string>
-
-    <!-- Seller -->
-    <string name="seller_tab_on_campus">On Campus</string>
-    <string name="seller_tab_off_campus">Off Campus</string>
-    <string name="seller_subtitle">Restaurants</string>
-    <string name="seller_deliver_type_pick_up">Pick-up at campus</string>
-    <string name="seller_deliver_type_delivery">Delivery</string>
-    <string name="seller_status_online">Opening</string>
-    <string name="seller_status_offline">Closed</string>
-    <string name="seller_status_offline_message">Seller is currently closed.</string>
-    <string name="seller_data_format_min_spend_info">$ %.1f Min</string>
-    <string name="seller_data_format_min_spend">%.1f Minimum</string>
-    <string name="seller_data_format_rating">%.1f</string>
-    <string name="seller_type_on_campus">On-Campus</string>
-    <string name="seller_type_off_campus">Off-Campus</string>
-
-    <!-- Seller Search -->
-    <string name="seller_search_hint_input">Find Restaurants</string>
-
     <!-- Seller Misc -->
-    <string name="seller_misc_title_opening_hours">Opening Hours</string>
-    <string name="seller_misc_title_contact_details">Contact Details</string>
-    <string name="seller_misc_title_description">Info</string>
-    <string name="seller_misc_data_format_phone">Tel: %s</string>
-    <string name="seller_misc_data_format_website">Website: %s</string>
+    <string name="seller_misc_title_description">Seller Info</string>
 
-    <!-- Seller Actions -->
-    <string name="seller_action_add_favorite">Add to Favorite</string>
-    <string name="seller_action_ratings">View Ratings</string>
-    <string name="seller_action_feedback">Send Feedback</string>
-
-    <!-- Seller Item -->
-    <string name="seller_item_subtitle_amount">Amount</string>
-    <string name="seller_item_data_format_price">$ %.1f</string>
-    <string name="seller_item_add_to_cart">Add To Cart ($ %.1f)</string>
-    <string name="seller_item_info"># %s</string>
-
-    <!-- Seller Item Detail -->
-    <string name="seller_item_detail_format_item_count">(%d Left)</string>
-    <string name="seller_item_detail_increment_content_desc">Add Item</string>
-    <string name="seller_item_detail_decrement_content_desc">Remove Item</string>
-    <string name="seller_item_detail_diff_seller_title">Add Item</string>
-    <string name="seller_item_detail_diff_seller_message">You can only add items from one seller for each order.</string>
-
-    <!-- Seller Section -->
-    <string name="seller_section_format_app_bar_title">%s %s</string>
-    <string name="seller_section_date">Order opens at %s</string>
-    <string name="seller_section_cutoff_time">Order due at %s</string>
-    <string name="seller_section_available">Available</string>
-    <string name="seller_section_upcoming"># Upcoming</string>
-    <string name="seller_section_user_counts">%d/%d Joined</string>
-    <string name="seller_section_subtitle_recent">Recent Orders</string>
-    <string name="seller_section_subtitle_upcoming">Upcoming</string>
-
-    <!-- Seller Section Detail -->
-    <string name="seller_section_detail_users_subtitle">Participants (%d/%d)</string>
-    <string name="seller_section_detail_counter_on_subtitle">Time Left</string>
-    <string name="seller_section_detail_counter_off_subtitle">Available On</string>
-    <string name="seller_section_detail_section_info_format_cutoff_time">Due at %s</string>
-    <string name="seller_section_detail_section_info_format_delivery_time">Deliver at %s</string>
-    <string name="seller_section_detail_shipping_info_subtitle">Shipped From</string>
-    <string name="seller_section_detail_seller_info_subtitle">Offered By</string>
-    <string name="seller_section_detail_seller_info_format_rating">%.1f</string>
-    <string name="seller_section_detail_button_add_items">Add Item to Cart</string>
-    <string name="more_sections_subtitle">More Orders</string>
-    <string name="more_sections_section_item_format_delivery_time">Deliver %s</string>
-    <string name="more_sections_show_more">More</string>
-
-    <!-- Promotion -->
-    <string name="promotion_subtitle_advertise">What\'s New</string>
-    <string name="promotion_subtitle_suggest">Suggest For You</string>
-
-    <!-- Cart -->
-    <string name="cart_app_bar_title">%d Items in Cart</string>
-    <string name="cart_bottom_bar_title_items_count">Items in Cart</string>
-    <string name="cart_bottom_bar_format_items_count">%d</string>
-    <string name="cart_bottom_bar_open_cart_content_desc">Open Cart</string>
-    <string name="cart_seller_info_subtitle">Order From</string>
-    <string name="cart_seller_info_title_menu">Menu</string>
-    <string name="cart_seller_info_title_detail">Detail</string>
-    <string name="cart_total_price_title_total">Total</string>
-    <string name="cart_total_price_title_subtotal">Subtotal</string>
-    <string name="cart_total_price_title_delivery_fee">Delivery</string>
-    <string name="cart_no_item_error">No Item in Cart</string>
-    <string name="cart_item_submitted_message">Added to cart.</string>
-    <string name="cart_actions_button_clear_cart">Clear Cart</string>
-    <string name="cart_actions_button_purchase">Proceed Payment</string>
-    <string name="cart_purchase_item_unavailable_message">Item unavailable. Consider remove it from your cart.</string>
-    <string name="cart_purchase_item_remove_item_content_desc">Remove Item</string>
-    <string name="cart_purchase_item_format_amount">Quantity: %d</string>
-    <string name="cart_purchase_item_format_notes">Notes: %s</string>
-    <string name="cart_purchase_item_format_total_price">x $%.1f</string>
-    <string name="cart_bottom_bar_format_total_price">$ %.1f</string>
-    <string name="cart_total_price_format_cost">$%.1f</string>
-    <string name="cart_clear_cart_dialog_title">Clear Cart</string>
-    <string name="cart_clear_Cart_dialog_message">Do you want to remove all cart items?</string>
-    <string name="cart_sync_required_message">One or more cart items need update.</string>
-    <string name="cart_sync_required_action_refresh">Update</string>
-    <string name="cart_sync_required_complete_message">Cart is updated.</string>
-    <string name="cart_timeout_message">Cart items are timeout and cleared.</string>
-    <string name="cart_cleared_message">Your cart is cleared.</string>
-    <string name="cart_timeout_dialog_title">Continue with your previous order?</string>
-    <string name="cart_timeout_dialog_message">You still have %d items left in your cart.</string>
-    <string name="cart_timeout_dialog_button_continue">Continue</string>
-    <string name="cart_timeout_dialog_button_clear_cart">Clear Cart</string>
+    <!-- Location -->
+    <string name="location_start_delivery_title">Pick an group order to start delivery</string>
+    <string name="location_start_delivery_button">View Orders</string>
 
 </resources>

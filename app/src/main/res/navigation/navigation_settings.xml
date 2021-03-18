@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_settings"
+    app:startDestination="@id/settingsListFragment">
+
+    <!-- SettingsFragment -->
+    <fragment
+        android:id="@+id/settingsListFragment"
+        android:name="com.foobarust.deliverer.ui.settings.SettingsListFragment"
+        android:label="@string/nav_title_settings"
+        tools:layout="@layout/fragment_settings_list">
+        <action
+            android:id="@+id/action_settingsListFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_settingsListFragment_to_sellerMiscFragment"
+            app:destination="@id/sellerMiscFragment" />
+        <action
+            android:id="@+id/action_settingsListFragment_to_licenseFragment"
+            app:destination="@id/licenseFragment" />
+    </fragment>
+
+    <!-- ProfileFragment -->
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.foobarust.deliverer.ui.settings.ProfileFragment"
+        android:label="@string/nav_title_profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_textInputDialog"
+            app:destination="@id/textInputDialog" />
+    </fragment>
+
+    <!-- LicenseFragment-->
+    <fragment
+        android:id="@+id/licenseFragment"
+        android:name="com.foobarust.deliverer.ui.settings.LicenseFragment"
+        android:label="@string/nav_title_license"
+        tools:layout="@layout/fragment_license"/>
+
+    <!-- SellerMiscFragment -->
+    <dialog
+        android:id="@+id/sellerMiscFragment"
+        android:name="com.foobarust.deliverer.ui.sellermisc.SellerMiscFragment"
+        tools:layout="@layout/fragment_seller_misc"/>
+
+    <!-- TextInputDialog -->
+    <dialog
+        android:id="@+id/textInputDialog"
+        android:name="com.foobarust.deliverer.ui.settings.TextInputDialog"
+        tools:layout="@layout/dialog_text_input">
+        <argument
+            android:name="property"
+            app:argType="com.foobarust.deliverer.ui.settings.TextInputProperty"
+            app:nullable="false"/>
+    </dialog>
+
+</navigation>

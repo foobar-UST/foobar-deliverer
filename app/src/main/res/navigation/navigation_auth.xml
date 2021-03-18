@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_auth"
+    app:startDestination="@id/authInputFragment">
+
+    <!-- AuthInputFragment -->
+    <fragment
+        android:id="@+id/authInputFragment"
+        android:name="com.foobarust.deliverer.ui.auth.AuthInputFragment"
+        tools:layout="@layout/fragment_auth_input">
+        <action
+            android:id="@+id/action_authInputFragment_to_authVerifyFragment"
+            app:destination="@id/authVerifyFragment"
+            app:enterAnim="@anim/fragment_slide_in_right"
+            app:exitAnim="@anim/fragment_slide_out_left"
+            app:popEnterAnim="@anim/fragment_slide_in_left"
+            app:popExitAnim="@anim/fragment_slide_out_right"
+            app:popUpTo="@id/authVerifyFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- AuthVerifyFragment -->
+    <fragment
+        android:id="@+id/authVerifyFragment"
+        android:name="com.foobarust.deliverer.ui.auth.AuthVerifyFragment"
+        tools:layout="@layout/fragment_auth_verify">
+        <action
+            android:id="@+id/action_authVerifyFragment_to_authInputFragment"
+            app:destination="@id/authInputFragment"
+            app:enterAnim="@anim/fragment_slide_in_left"
+            app:exitAnim="@anim/fragment_slide_out_right"
+            app:popEnterAnim="@anim/fragment_slide_in_right"
+            app:popExitAnim="@anim/fragment_slide_out_left"
+            app:popUpTo="@id/authInputFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>

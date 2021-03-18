@@ -12,12 +12,6 @@
         <item name="android:windowLightNavigationBar">true</item>
     </style>
 
-    <style name="Theme.Foobar.Onboarding.DayNight" parent="Theme.Foobar.Onboarding.v27"/>
-    <style name="Theme.Foobar.Onboarding.v27" parent="Theme.Foobar.Onboarding.v23">
-        <item name="android:navigationBarColor">?android:attr/colorBackground</item>
-        <item name="android:windowLightNavigationBar">true</item>
-    </style>
-
     <style name="Theme.Foobar.Auth.DayNight" parent="Theme.Foobar.Auth.v27"/>
     <style name="Theme.Foobar.Auth.v27" parent="Theme.Foobar.Auth.v23">
         <item name="android:navigationBarColor">?android:attr/colorBackground</item>
@@ -32,7 +26,7 @@
 
     <style name="Theme.Foobar.DayNight" parent="Theme.Foobar.v27"/>
     <style name="Theme.Foobar.v27" parent="Theme.Foobar.v23">
-        <item name="android:navigationBarColor">?attr/colorPrimarySurface</item>
-        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:navigationBarColor">?android:attr/colorBackground</item>
+        <item name="android:windowLightNavigationBar">true</item>
     </style>
 </resources>

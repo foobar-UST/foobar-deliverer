@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/section_text_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/spacing_mlarge"
+    android:paddingEnd="@dimen/spacing_mlarge"
+    android:paddingTop="@dimen/spacing_large"
+    android:paddingBottom="@dimen/spacing_large"
+    android:gravity="center_vertical"
+    android:background="?attr/selectableItemBackground"
+    android:textAppearance="?attr/textAppearanceBody2"
+    android:drawablePadding="@dimen/spacing_xlarge"
+    app:drawableTint="@color/material_on_background_emphasis_medium"
+    tools:text="Notifications"
+    tools:drawableStart="@drawable/ic_notification_important"/>
