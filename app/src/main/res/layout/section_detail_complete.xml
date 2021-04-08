@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/action_text_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -11,10 +10,8 @@
     android:gravity="center_vertical"
     android:padding="@dimen/spacing_large"
     android:textAppearance="?attr/textAppearanceButton"
+    android:text="@string/section_detail_complete_delivery_button"
+    android:textColor="?attr/colorPrimary"
     android:drawablePadding="@dimen/spacing_large"
-    app:drawableStartCompat="@drawable/ic_clear"
-    tools:drawableTint="?attr/colorError"
-    tools:textColor="?attr/colorError"
-    tools:text="@string/section_detail_cancel_delivery_button">
-
-</TextView>
+    app:drawableStartCompat="@drawable/ic_done"
+    app:drawableTint="?attr/colorPrimary" />

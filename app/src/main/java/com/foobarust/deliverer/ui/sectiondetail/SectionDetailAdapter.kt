@@ -1,10 +1,8 @@
 package com.foobarust.deliverer.ui.sectiondetail
 
-import android.content.res.ColorStateList
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.widget.TextViewCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -18,7 +16,6 @@ import com.foobarust.deliverer.ui.sectiondetail.SectionDetailViewHolder.*
 import com.foobarust.deliverer.utils.format
 import com.foobarust.deliverer.utils.getTimeBy12Hour
 import com.foobarust.deliverer.utils.loadGlideUrl
-import com.foobarust.deliverer.utils.themeColor
 import java.util.*
 
 /**
@@ -47,8 +44,11 @@ class SectionDetailAdapter(
             R.layout.section_detail_location -> SectionDetailLocationViewHolder(
                 SectionDetailLocationBinding.inflate(inflater, parent, false)
             )
-            R.layout.section_detail_action -> SectionDetailCancelViewHolder(
-                SectionDetailActionBinding.inflate(inflater, parent, false)
+            R.layout.section_detail_complete -> SectionDetailCompleteViewHolder(
+                SectionDetailCompleteBinding.inflate(inflater, parent, false)
+            )
+            R.layout.section_detail_cancel -> SectionDetailCancelViewHolder(
+                SectionDetailCancelBinding.inflate(inflater, parent, false)
             )
             else -> throw IllegalStateException("Unknown view type $viewType")
         }
@@ -91,8 +91,8 @@ class SectionDetailAdapter(
             is SectionDetailOrdersModel -> R.layout.section_detail_orders
             is SectionDetailSellerModel -> R.layout.section_detail_seller
             is SectionDetailLocationModel -> R.layout.section_detail_location
-            is SectionDetailCompleteModel -> R.layout.section_detail_action
-            is SectionDetailCancelModel -> R.layout.section_detail_action
+            is SectionDetailCompleteModel -> R.layout.section_detail_complete
+            is SectionDetailCancelModel -> R.layout.section_detail_cancel
         }
     }
 
@@ -167,34 +167,18 @@ class SectionDetailAdapter(
     }
 
     private fun bindSectionDetailCompleteModel(
-        binding: SectionDetailActionBinding
+        binding: SectionDetailCompleteBinding
     ) = binding.run {
-        with(actionTextView) {
-            setText(R.string.section_detail_complete_delivery_button)
-            setTextColor(context.themeColor(R.attr.colorPrimary))
-            TextViewCompat.setCompoundDrawableTintList(
-                this,
-                ColorStateList.valueOf(context.themeColor(R.attr.colorPrimary))
-            )
-            setOnClickListener {
-                listener.onCompleteDelivery()
-            }
+        actionTextView.setOnClickListener {
+            listener.onCompleteDelivery()
         }
     }
 
     private fun bindSectionDetailCancelModel(
-        binding: SectionDetailActionBinding
+        binding: SectionDetailCancelBinding
     ) = binding.run {
-        with(actionTextView) {
-            setText(R.string.section_detail_cancel_delivery_button)
-            setTextColor(context.themeColor(R.attr.colorError))
-            TextViewCompat.setCompoundDrawableTintList(
-                this,
-                ColorStateList.valueOf(context.themeColor(R.attr.colorError))
-            )
-            setOnClickListener {
-                listener.onCancelDelivery()
-            }
+        actionTextView.setOnClickListener {
+            listener.onCancelDelivery()
         }
     }
 
@@ -229,11 +213,11 @@ sealed class SectionDetailViewHolder(itemView: View) : RecyclerView.ViewHolder(i
     ) : SectionDetailViewHolder(binding.root)
 
     class SectionDetailCompleteViewHolder(
-        val binding: SectionDetailActionBinding
+        val binding: SectionDetailCompleteBinding
     ) : SectionDetailViewHolder(binding.root)
 
     class SectionDetailCancelViewHolder(
-        val binding: SectionDetailActionBinding
+        val binding: SectionDetailCancelBinding
     ) : SectionDetailViewHolder(binding.root)
 }
 
