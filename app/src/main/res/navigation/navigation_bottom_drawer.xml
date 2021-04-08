@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_bottom_drawer">
+
+    <!-- SectionPendingFragment -->
+    <fragment
+        android:id="@+id/sectionPendingFragment"
+        android:name="com.foobarust.deliverer.ui.bottomdrawer.SectionPendingFragment"
+        tools:layout="@layout/fragment_section_pending">
+        <action
+            android:id="@+id/action_sectionPendingFragment_to_sectionDetailFragment"
+            app:destination="@id/sectionDetailFragment" />
+    </fragment>
+
+    <!-- SectionTransitFragment -->
+    <fragment
+        android:id="@+id/sectionTransitFragment"
+        android:name="com.foobarust.deliverer.ui.bottomdrawer.SectionTransitFragment"
+        tools:layout="@layout/fragment_section_transit">
+        <action
+            android:id="@+id/action_sectionTransitFragment_to_sectionDetailFragment"
+            app:destination="@id/sectionDetailFragment" />
+    </fragment>
+
+    <!-- SectionDetailFragment -->
+    <dialog
+        android:id="@+id/sectionDetailFragment"
+        android:name="com.foobarust.deliverer.ui.sectiondetail.SectionDetailFragment"
+        tools:layout="@layout/fragment_section_detail">
+        <argument
+            android:name="sectionId"
+            app:argType="string"/>
+        <argument
+            android:name="sectionDetailMode"
+            app:argType="com.foobarust.deliverer.ui.sectiondetail.SectionDetailMode"/>
+        <action
+            android:id="@+id/action_sectionDetailFragment_to_sellerMiscFragment"
+            app:destination="@id/sellerMiscFragment" />
+        <action
+            android:id="@+id/action_sectionDetailFragment_to_sectionUserFragment"
+            app:destination="@id/sectionUserFragment" />
+    </dialog>
+
+    <!-- SellerMiscFragment -->
+    <dialog
+        android:id="@+id/sellerMiscFragment"
+        android:name="com.foobarust.deliverer.ui.sellermisc.SellerMiscFragment"
+        tools:layout="@layout/fragment_seller_misc"/>
+
+    <!-- SectionUsersFragment -->
+    <dialog
+        android:id="@+id/sectionUserFragment"
+        android:name="com.foobarust.deliverer.ui.sectionuser.SectionUserFragment"
+        tools:layout="@layout/fragment_section_user">
+        <argument
+            android:name="property"
+            app:argType="com.foobarust.deliverer.ui.sectionuser.SectionUserProperty"/>
+    </dialog>
+
+</navigation>

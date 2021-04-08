@@ -2,6 +2,7 @@ package com.foobarust.deliverer.utils
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.pm.PackageManager
 import android.content.res.ColorStateList
 import android.content.res.Configuration
 import android.graphics.Color
@@ -13,6 +14,24 @@ import androidx.annotation.*
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.use
+
+fun Context.statusBarHeight(): Int {
+    val statusBarHeightId = resources.getIdentifier(
+        "status_bar_height", "dimen", "android"
+    )
+    return resources.getDimensionPixelSize(statusBarHeightId)
+}
+
+/**
+ * Check if a permission is approved.
+ * @param permission Manifest.permission.*
+ */
+fun Context.isPermissionGranted(permission: String): Boolean {
+    return ContextCompat.checkSelfPermission(
+        this,
+        permission
+    ) == PackageManager.PERMISSION_GRANTED
+}
 
 /**
  * Check if night mode is enabled.

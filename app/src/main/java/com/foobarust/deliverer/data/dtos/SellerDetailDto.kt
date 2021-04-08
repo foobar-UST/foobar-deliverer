@@ -21,10 +21,6 @@ import com.foobarust.deliverer.constants.Constants.SELLER_TYPE_FIELD
 import com.foobarust.deliverer.constants.Constants.SELLER_WEBSITE_FIELD
 import com.google.firebase.firestore.PropertyName
 
-/**
- * Created by kevin on 9/27/20
- */
-
 data class SellerDetailDto(
     @JvmField
     @PropertyName(SELLER_ID_FIELD)

@@ -19,10 +19,13 @@ class DirectionsDeserializer : JsonDeserializer<DirectionsResponse> {
         context: JsonDeserializationContext?
     ): DirectionsResponse {
         val obj = json?.asJsonObject ?: throw JsonParseException("Cannot parse directions")
+
         // Use first route only
         val route = obj.getAsJsonArray("routes")[0].asJsonObject
         val polyline = route.get("overview_polyline").asJsonObject
         val points = polyline.get("points").asString
+
+        println(points)
 
         return DirectionsResponse(points)
     }

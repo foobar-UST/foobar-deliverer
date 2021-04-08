@@ -13,7 +13,6 @@
     <string name="notification_upload_user_photo_body">Uploading</string>
 
     <string name="notification_tracking_title">Tracking location</string>
-    <string name="notification_tracking_body">Your current location will be uploaded.</string>
     <string name="notification_tracking_action_launch">Open</string>
     <string name="notification_tracking_action_cancel">Cancel</string>
 

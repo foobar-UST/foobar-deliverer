@@ -1,35 +1,44 @@
 package com.foobarust.deliverer.ui.settings
 
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.NavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupWithNavController
+import com.foobarust.android.utils.showShortToast
 import com.foobarust.deliverer.R
 import com.foobarust.deliverer.databinding.FragmentSettingsBinding
-import com.foobarust.deliverer.ui.shared.FullScreenDialogFragment
-import com.foobarust.deliverer.utils.getHiltNavGraphViewModel
+import com.foobarust.deliverer.ui.main.MainViewModel
+import com.foobarust.deliverer.utils.AutoClearedValue
+import com.foobarust.deliverer.utils.applySystemWindowInsetsPadding
+import com.foobarust.deliverer.utils.findNavController
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 /**
  * Created by kevin on 3/13/21
  */
 
 @AndroidEntryPoint
-class SettingsFragment : FullScreenDialogFragment() {
+class SettingsFragment : Fragment(), SettingsAdapter.SettingsAdapterListener {
 
-    private lateinit var binding: FragmentSettingsBinding
-    private lateinit var navController: NavController
-    private lateinit var viewModel: SettingsViewModel
+    private var binding: FragmentSettingsBinding by AutoClearedValue(this)
+    private val mainViewModel: MainViewModel by activityViewModels()
+    private val settingsViewModel: SettingsViewModel by viewModels()
 
-    override var onBackPressed: (() -> Unit)? = { handleBackPressed() }
+    @Inject
+    lateinit var packageManager: PackageManager
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,28 +47,31 @@ class SettingsFragment : FullScreenDialogFragment() {
     ): View {
         binding = FragmentSettingsBinding.inflate(inflater, container, false)
 
-        // Setup navigation
-        val navHostFragment = childFragmentManager.findFragmentById(R.id.settings_nav_container)
-            as NavHostFragment
-        navController = navHostFragment.navController.apply {
-            setGraph(R.navigation.navigation_settings)
+        // Set toolbar
+        binding.appBarLayout.applySystemWindowInsetsPadding(applyTop = true)
+
+        // Setup recycler view
+        val settingsAdapter = SettingsAdapter(this)
+
+        binding.settingsRecyclerView.run {
+            adapter = settingsAdapter
+            setHasFixedSize(true)
         }
 
-        viewModel = getHiltNavGraphViewModel(
-            navGraphId = R.id.navigation_settings,
-            navController = navController
-        )
+        viewLifecycleOwner.lifecycleScope.launch {
+            settingsViewModel.settingsListModels.collect {
+                settingsAdapter.submitList(it)
+            }
+        }
 
-        // Set up toolbar
-        val appBarConfiguration = AppBarConfiguration.Builder()
-            .setFallbackOnNavigateUpListener { handleBackPressed(); true }
-            .build()
-
-        binding.toolbar.setupWithNavController(navController, appBarConfiguration)
+        // Ui state
+        settingsViewModel.settingsUiState.observe(viewLifecycleOwner) {
+            binding.loadingProgressBar.isVisible = it == SettingsUiState.LOADING
+        }
 
         // Show snack bar
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.snackBarMessage.collect {
+            settingsViewModel.snackBarMessage.collect {
                 showMessageSnackbar(it)
             }
         }
@@ -67,23 +79,48 @@ class SettingsFragment : FullScreenDialogFragment() {
         return binding.root
     }
 
-    private fun showMessageSnackbar(message: String) {
-        Snackbar.make(binding.constraintLayout, message, Snackbar.LENGTH_SHORT).show()
+    override fun onProfileClicked() {
+        findNavController(R.id.settingsFragment)?.navigate(
+            SettingsFragmentDirections.actionSettingsFragmentToProfileFragment()
+        )
     }
 
-    private fun handleBackPressed() {
-        val currentDestination = navController.currentDestination?.id
-        if (currentDestination == R.id.settingsListFragment) {
-            dismiss()
-        } else {
-            viewModel.onBackPressed()
+    override fun onSectionItemClicked(sectionId: String) {
+        when (sectionId) {
+            SETTINGS_EMPLOYED_BY -> findNavController(R.id.settingsFragment)?.navigate(
+                SettingsFragmentDirections.actionSettingsFragmentToSellerMiscFragment()
+            )
+            SETTINGS_CONTACT_US -> sendContactUsEmail()
+            SETTINGS_TERMS_CONDITIONS -> findNavController(R.id.settingsFragment)?.navigate(
+                SettingsFragmentDirections.actionSettingsFragmentToLicenseFragment()
+            )
+            SETTINGS_SIGN_OUT -> showSignOutConfirmDialog()
         }
     }
 
-    companion object {
-        const val TAG = "SettingsFragment"
+    private fun showMessageSnackbar(message: String) {
+        Snackbar.make(binding.coordinatorLayout, message, Snackbar.LENGTH_SHORT).show()
+    }
 
-        @JvmStatic
-        fun newInstance(): SettingsFragment = SettingsFragment()
+    private fun sendContactUsEmail() {
+        val intent = Intent(Intent.ACTION_SENDTO).apply {
+            data = Uri.parse("mailto:")
+            putExtra(Intent.EXTRA_EMAIL, arrayOf("kthon@connect.ust.hk"))
+        }
+
+        if (intent.resolveActivity(packageManager) != null) {
+            startActivity(intent)
+        } else {
+            showShortToast(getString(R.string.error_resolve_activity_failed))
+        }
+    }
+
+    private fun showSignOutConfirmDialog() {
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle(getString(R.string.sign_out_dialog_title))
+            .setMessage(getString(R.string.sign_out_dialog_message))
+            .setPositiveButton(android.R.string.ok) { _, _ -> mainViewModel.onUserSignOut() }
+            .setNegativeButton(android.R.string.cancel) { dialog, _ -> dialog.dismiss() }
+            .show()
     }
 }

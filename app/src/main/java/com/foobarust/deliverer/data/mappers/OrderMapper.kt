@@ -8,11 +8,9 @@ import com.foobarust.deliverer.constants.Constants.ORDER_STATE_PREPARING
 import com.foobarust.deliverer.constants.Constants.ORDER_STATE_PROCESSING
 import com.foobarust.deliverer.constants.Constants.ORDER_STATE_READY_FOR_PICK_UP
 import com.foobarust.deliverer.data.dtos.OrderBasicDto
-import com.foobarust.deliverer.data.models.GeolocationPoint
-import com.foobarust.deliverer.data.models.OrderBasic
-import com.foobarust.deliverer.data.models.OrderState
-import com.foobarust.deliverer.data.models.OrderType
-import com.foobarust.deliverer.data.request.UpdateOrderLocationRequest
+import com.foobarust.deliverer.data.dtos.OrderDetailDto
+import com.foobarust.deliverer.data.dtos.OrderItemDto
+import com.foobarust.deliverer.data.models.*
 import javax.inject.Inject
 
 /**
@@ -26,6 +24,7 @@ class OrderMapper @Inject constructor() {
             id = dto.id!!,
             title = dto.title!!,
             titleZh = dto.titleZh,
+            userId = dto.userId!!,
             sellerId = dto.sellerId!!,
             sellerName = dto.sellerName!!,
             sellerNameZh = dto.sellerNameZh,
@@ -42,15 +41,61 @@ class OrderMapper @Inject constructor() {
             updatedAt = dto.updatedAt!!.toDate()
         )
     }
+    
+    fun toOrderDetail(dto: OrderDetailDto): OrderDetail {
+        val orderItems = dto.orderItems?.map {
+            fromOrderItemDtoToOrderItem(it)
+        } ?: emptyList()
 
-    fun toUpdateOrderLocationRequest(
-        orderId: String,
-        geolocationPoint: GeolocationPoint
-    ): UpdateOrderLocationRequest {
-        return UpdateOrderLocationRequest(
-            orderId = orderId,
-            latitude = geolocationPoint.latitude,
-            longitude = geolocationPoint.longitude
+        val delivererLocation = dto.delivererLocation?.let {
+            GeolocationPoint(
+                latitude = it.latitude, longitude = it.longitude
+            )
+        }
+
+        return OrderDetail(
+            id = dto.id!!,
+            title = dto.title!!,
+            titleZh = dto.titleZh,
+            userId = dto.userId!!,
+            sellerId = dto.sellerId!!,
+            sellerName = dto.sellerName!!,
+            sellerNameZh = dto.sellerNameZh,
+            sectionId = dto.sectionId,
+            sectionTitle = dto.sectionTitle,
+            sectionTitleZh = dto.sectionTitleZh,
+            delivererId = dto.delivererId,
+            delivererLocation = delivererLocation,
+            identifier = dto.identifier!!,
+            imageUrl = dto.imageUrl,
+            type = OrderType.values()[dto.type!!],
+            orderItems = orderItems,
+            orderItemsCount = dto.orderItemsCount!!,
+            state = toOrderState(dto.state!!),
+            isPaid = dto.isPaid!!,
+            paymentMethod = dto.paymentMethod!!,
+            message = dto.message,
+            deliveryLocation = dto.deliveryLocation!!.toGeolocation(),
+            subtotalCost = dto.subtotalCost!!,
+            deliveryCost = dto.deliveryCost!!,
+            totalCost = dto.totalCost!!,
+            verifyCode = dto.verifyCode!!,
+            createdAt = dto.createdAt!!.toDate(),
+            updatedAt = dto.updatedAt!!.toDate()
+        )
+    }
+
+    private fun fromOrderItemDtoToOrderItem(dto: OrderItemDto): OrderItem {
+        return OrderItem(
+            id = dto.id!!,
+            itemId = dto.itemId!!,
+            itemSellerId = dto.itemSellerId!!,
+            itemTitle = dto.itemTitle!!,
+            itemTitleZh = dto.itemTitleZh,
+            itemPrice = dto.itemPrice!!,
+            itemImageUrl = dto.itemImageUrl,
+            amounts = dto.amounts!!,
+            totalPrice = dto.totalPrice!!
         )
     }
 

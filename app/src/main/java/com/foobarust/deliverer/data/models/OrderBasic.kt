@@ -11,6 +11,7 @@ data class OrderBasic(
     val id: String,
     val title: String,
     val titleZh: String?,
+    val userId: String,
     val sellerId: String,
     val sellerName: String,
     val sellerNameZh: String?,

@@ -6,6 +6,9 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera.any" />
 
     <queries>
         <intent>
@@ -20,6 +23,7 @@
             <category android:name="android.intent.category.BROWSABLE" />
             <data android:scheme="https" />
         </intent>
+        <package android:name="com.google.android.apps.maps" />
     </queries>
 
     <application
@@ -56,6 +60,12 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Foobar.DayNight"/>
 
+        <activity
+            android:name=".ui.verify.VerifyDeliveryActivity"
+            android:parentActivityName=".ui.main.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Foobar.DayNight"/>
+
         <!-- Google Maps-based APIs -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -64,6 +74,11 @@
         <meta-data
             android:name="firebase_analytics_collection_deactivated"
             android:value="${disableAnalytics}"/>
+
+        <!-- Download mlkit model from Play Services automatically -->
+        <meta-data
+            android:name="com.google.mlkit.vision.DEPENDENCIES"
+            android:value="barcode" />
 
         <!-- Register foreground service for Q+ -->
         <service

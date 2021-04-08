@@ -9,6 +9,7 @@ import com.foobarust.deliverer.constants.Constants.USER_NAME_FIELD
 import com.foobarust.deliverer.constants.Constants.USER_PHONE_NUM_FIELD
 import com.foobarust.deliverer.constants.Constants.USER_PHOTO_URL_FIELD
 import com.foobarust.deliverer.constants.Constants.USER_ROLES_FIELD
+import com.foobarust.deliverer.constants.Constants.USER_SECTION_IN_DELIVERY
 import com.foobarust.deliverer.constants.Constants.USER_UPDATED_AT_FIELD
 import com.foobarust.deliverer.constants.Constants.USER_USERNAME_FIELD
 import com.google.firebase.Timestamp
@@ -59,5 +60,9 @@ data class UserDetailNetworkDto(
 
     @JvmField
     @PropertyName(USER_EMPLOYED_BY_FIELD)
-    val employedBy: String? = null
+    val employedBy: String? = null,
+
+    @JvmField
+    @PropertyName(USER_SECTION_IN_DELIVERY)
+    val sectionInDelivery: String? = null
 )

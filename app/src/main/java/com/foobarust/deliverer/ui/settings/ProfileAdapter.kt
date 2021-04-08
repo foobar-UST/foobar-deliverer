@@ -13,8 +13,8 @@ import com.foobarust.deliverer.databinding.ProfileInfoItemBinding
 import com.foobarust.deliverer.databinding.ProfileNoticeItemBinding
 import com.foobarust.deliverer.ui.settings.ProfileListModel.*
 import com.foobarust.deliverer.ui.settings.ProfileViewHolder.*
+import com.foobarust.deliverer.utils.drawableFitVertical
 import com.foobarust.deliverer.utils.loadGlideUrl
-import com.foobarust.deliverer.utils.setDrawableFitVertical
 
 class ProfileAdapter(
     private val listener: ProfileAdapterListener
@@ -95,7 +95,7 @@ class ProfileAdapter(
 
         with(valueTextView) {
             text = editItemModel.displayValue
-            setDrawableFitVertical()
+            drawableFitVertical()
         }
     }
 

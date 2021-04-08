@@ -3,13 +3,34 @@ package com.foobarust.deliverer.data.mappers
 import com.foobarust.deliverer.constants.Constants.USER_ROLE_DELIVERER
 import com.foobarust.deliverer.constants.Constants.USER_ROLE_SELLER
 import com.foobarust.deliverer.constants.Constants.USER_ROLE_USER
+import com.foobarust.deliverer.data.dtos.UserDeliveryDto
 import com.foobarust.deliverer.data.dtos.UserDetailCacheDto
 import com.foobarust.deliverer.data.dtos.UserDetailNetworkDto
+import com.foobarust.deliverer.data.dtos.UserPublicDto
+import com.foobarust.deliverer.data.models.UserDelivery
 import com.foobarust.deliverer.data.models.UserDetail
+import com.foobarust.deliverer.data.models.UserPublic
 import com.foobarust.deliverer.data.models.UserRole
 import javax.inject.Inject
 
 class UserMapper @Inject constructor() {
+
+    fun toUserPublic(dto: UserPublicDto): UserPublic {
+        return UserPublic(
+            id = dto.id!!,
+            username = dto.username!!,
+            photoUrl = dto.photoUrl
+        )
+    }
+
+    fun toUserDelivery(dto: UserDeliveryDto): UserDelivery {
+        return UserDelivery(
+            id = dto.id!!,
+            name = dto.name,
+            phoneNum = dto.phoneNum,
+            photoUrl = dto.photoUrl
+        )
+    }
 
     fun fromUserDetailNetworkDtoToUserDetail(networkDto: UserDetailNetworkDto): UserDetail {
         return UserDetail(
@@ -22,7 +43,8 @@ class UserMapper @Inject constructor() {
             roles = networkDto.roles?.map { mapUserRole(it) } ?: emptyList(),
             updatedAt = networkDto.updatedAt?.toDate(),
             createdRest = networkDto.createdRest ?: false,
-            employedBy = networkDto.employedBy
+            employedBy = networkDto.employedBy,
+            sectionInDelivery = networkDto.sectionInDelivery
         )
     }
 
@@ -42,7 +64,8 @@ class UserMapper @Inject constructor() {
             roles = userRoles,
             updatedAt = cacheDto.updatedAt,
             createdRest = cacheDto.createdRest ?: false,
-            employedBy = cacheDto.employedBy
+            employedBy = cacheDto.employedBy,
+            sectionInDelivery = cacheDto.sectionInDelivery
         )
     }
 
@@ -57,7 +80,8 @@ class UserMapper @Inject constructor() {
             roles = userDetail.roles.joinToString(",") { mapRoleString(it) },
             updatedAt = userDetail.updatedAt,
             createdRest = userDetail.createdRest,
-            employedBy = userDetail.employedBy
+            employedBy = userDetail.employedBy,
+            sectionInDelivery = userDetail.sectionInDelivery
         )
     }
 

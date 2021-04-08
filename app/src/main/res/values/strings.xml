@@ -12,8 +12,16 @@
     <!-- Error layout -->
     <string name="load_error_retry">Retry</string>
 
+    <!-- Loading Error -->
+    <string name="loading_error_title">No connection</string>
+    <string name="loading_error_content">Please check your internet connection and try again.</string>
+
+    <!-- Paging -->
+    <string name="load_state_retry">Retry</string>
+
     <!-- Permission -->
-    <string name="request_permission_message">Location permission needed for delivery tracking.</string>
+    <string name="request_location_permission_message">Require location permission for tracking.</string>
+    <string name="request_camera_permission_message">Require camera permission for scanning.</string>
     <string name="request_permission_action_settings">Settings</string>
 
     <!-- Auth -->
@@ -62,6 +70,99 @@
 
     <!-- Location -->
     <string name="location_start_delivery_title">Pick an group order to start delivery</string>
-    <string name="location_start_delivery_button">View Orders</string>
+
+    <!-- Section Pending -->
+    <string name="section_pending_title">Start Delivery</string>
+    <string name="section_pending_seller_title">From %s</string>
+    <string name="section_pending_item_title">%s\n@ %s</string>
+    <string name="section_pending_item_delivery_time">Deliver Before %s</string>
+    <string name="section_pending_item_users_count">%d/%d Users Joined</string>
+    <string name="section_pending_item_pending_message">Pending</string>
+    <string name="section_pending_empty_message">No section found</string>
+    <string name="section_pending_header">Upcoming Deliveries</string>
+
+    <!-- Section Detail -->
+    <string name="section_detail_delivery_time_title">Deliver On</string>
+    <string name="section_detail_section_id_title">Id</string>
+    <string name="section_detail_section_title_title">Order</string>
+    <string name="section_detail_delivery_date_title">Date</string>
+    <string name="section_detail_users_count_title">Num of Users</string>
+    <string name="section_detail_users_count">%d / %d</string>
+    <string name="section_detail_seller_phone_num">Tel: %s</string>
+    <string name="section_detail_info_title">Order Detail</string>
+    <string name="section_detail_seller_title">Restaurant</string>
+    <string name="section_detail_location_title">Deliver To</string>
+    <string name="section_detail_orders_title">Show User Orders</string>
+    <string name="section_detail_location_map_button">View In Google Maps</string>
+    <string name="section_detail_action_button_start_delivery">Start Delivery</string>
+    <string name="section_detail_action_button_user_orders">View User Orders</string>
+    <string name="section_detail_start_delivery_button_content_description">Show My Location</string>
+    <string name="section_detail_start_delivery_confirm_dialog_title">Start Delivery</string>
+    <string name="section_detail_start_delivery_confirm_dialog_message">Are you sure to start the following delivery?\n\nOrder: %s\nDeliver On: %s %s\nRestaurant: %s</string>
+    <string name="section_detail_cancel_delivery_confirm_dialog_title">Cancel Delivery</string>
+    <string name="section_detail_cancel_delivery_confirm_dialog_message">Are you sure to cancel the current delivery?</string>
+    <string name="section_detail_complete_delivery_button">Complete Delivery</string>
+    <string name="section_detail_cancel_delivery_button">Cancel Delivery</string>
+
+    <!-- Section Transit -->
+    <string name="section_transit_title">Delivery</string>
+    <string name="section_transit_delivery_time_left_hours">H</string>
+    <string name="section_transit_delivery_time_left_minutes">Min</string>
+    <string name="section_transit_delivery_time_left">%s Left - %s</string>
+    <string name="section_transit_order_detail_button">Order Detail</string>
+
+    <!-- Travel Mode -->
+    <string name="travel_mode_driving">Driving</string>
+    <string name="travel_mode_walking">Walking</string>
+    <string name="travel_mode_dialog_title">Delivery Mode</string>
+    <string name="travel_mode_updated_message">Delivery mode updated.</string>
+
+    <!-- Arrive -->
+    <string name="arrived_chip_title">Arrived Dest.</string>
+
+    <!-- Section User -->
+    <string name="section_user_toolbar_title">%d/%d Participants</string>
+    <string name="section_user_list_item_items_count_text_view">#%s\t%d items in order</string>
+    <string name="section_user_list_item_delivered">Delivered</string>
+    <string name="section_user_list_item_pick_up">Pending</string>
+
+    <!-- Section User Detail -->
+    <string name="section_user_detail_order_info_identifier">Order #%s</string>
+    <string name="section_user_detail_order_info_message">· %s</string>
+    <string name="section_user_detail_order_info_total_cost">HKD $%.1f</string>
+    <string name="section_user_detail_cost_title_total_cost">Total Cost</string>
+    <string name="section_user_detail_cost_title_subtotal">Subtotal</string>
+    <string name="section_user_detail_cost_delivery_cost">Delivery</string>
+    <string name="section_user_detail_cost_format">$%.1f</string>
+    <string name="section_user_detail_action_delivered_manual">Deliver\n(Manual)</string>
+    <string name="section_user_detail_action_delivered_scan">Deliver\n(Scan)</string>
+    <string name="section_user_detail_action_contact_user">Contact\nCustomer</string>
+    <string name="section_user_detail_payment_paid">Paid</string>
+    <string name="section_user_detail_payment_not_paid">Not Paid</string>
+    <string name="section_user_detail_payment_title">Payment</string>
+    <string name="section_user_detail_payment_notice_message">Accept payment before delivering the order.</string>
+    <string name="section_user_detail_delivered_message">Order Delivered</string>
+
+    <!-- Confirm Order Delivered -->
+    <string name="confirm_order_delivered_dialog_title">Confirm Delivery</string>
+    <string name="confirm_order_delivered_dialog_message">Are you sure to confirm the delivery?</string>
+
+    <!-- Payment Methods -->
+    <string name="payment_methods_title_cash_on_delivery">Cash On Delivery</string>
+    <string name="payment_methods_description_cash_on_delivery">Pay when you pick up the order.</string>
+    <string name="payment_methods_title_google_pay">Google Pay</string>
+    <string name="payment_methods_description_google_pay">Pay online using Google Pay service.</string>
+
+    <!-- Verify delivery -->
+    <string name="verify_delivery_toolbar_title">Verify Delivery</string>
+    <string name="verify_delivery_permission_missing_message">Scan to Verify Delivery</string>
+    <string name="verify_delivery_scan_hint">Place code in the center.</string>
+
+    <!-- Deliverer Info -->
+    <string name="user_info_description">is waiting the order.</string>
+
+    <!-- Confirm Start Pickup -->
+    <string name="confirm_start_pickup_dialog_title">Start Pickup</string>
+    <string name="confirm_start_pickup_dialog_message">Are you sure to start pick up process?</string>
 
 </resources>

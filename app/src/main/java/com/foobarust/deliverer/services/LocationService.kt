@@ -11,26 +11,35 @@ import android.location.Location
 import android.os.Binder
 import android.os.IBinder
 import android.provider.ContactsContract.Directory.PACKAGE_NAME
+import android.util.Log
 import androidx.annotation.RequiresPermission
 import androidx.core.app.NotificationCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.foobarust.deliverer.R
+import com.foobarust.deliverer.data.models.GeolocationPoint
+import com.foobarust.deliverer.data.models.TravelMode
+import com.foobarust.deliverer.data.models.UserDetail
+import com.foobarust.deliverer.states.Resource
 import com.foobarust.deliverer.ui.auth.AuthActivity
+import com.foobarust.deliverer.usecases.AuthState
+import com.foobarust.deliverer.usecases.auth.GetUserAuthStateUseCase
+import com.foobarust.deliverer.usecases.deliver.UpdateSectionLocationParameters
+import com.foobarust.deliverer.usecases.deliver.UpdateSectionLocationUseCase
 import com.foobarust.deliverer.utils.cancelIfActive
 import com.foobarust.deliverer.utils.locationFlow
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationRequest
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.collect
-import java.util.concurrent.TimeUnit
+import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
 /**
  * Created by kevin on 3/10/21
  */
 
-private const val LOCATION_INTERVAL_SECOND = 5L
+private const val LOCATION_REQUEST_INTERVAL = 5000L
+private const val LOCATION_UPLOAD_INTERVAL = 10000L
 
 @AndroidEntryPoint
 class LocationService : Service() {
@@ -44,13 +53,16 @@ class LocationService : Service() {
     @Inject
     lateinit var fusedLocationProviderClient: FusedLocationProviderClient
 
-    //@Inject
-    //lateinit var updateOrderLocationUseCase: UpdateOrderLocationUseCase
+    @Inject
+    lateinit var getUserAuthStateUseCase: GetUserAuthStateUseCase
+
+    @Inject
+    lateinit var updateSectionLocationUseCase: UpdateSectionLocationUseCase
 
     private val locationRequest: LocationRequest by lazy {
         LocationRequest.create().apply {
-            interval = TimeUnit.SECONDS.toMillis(LOCATION_INTERVAL_SECOND)
-            fastestInterval = TimeUnit.SECONDS.toMillis(LOCATION_INTERVAL_SECOND / 2)
+            interval = LOCATION_REQUEST_INTERVAL
+            fastestInterval = LOCATION_REQUEST_INTERVAL / 2
             //maxWaitTime = TimeUnit.MINUTES.toMillis(LOCATION_INTERVAL_SECOND)
             priority = LocationRequest.PRIORITY_HIGH_ACCURACY
         }
@@ -63,10 +75,15 @@ class LocationService : Service() {
     // Checks whether the bound activity has really gone away
     // (foreground service with notification created) or simply orientation change (no-op).
     private var configurationChange = false
-
     private var runningInForeground = false
 
-    private var updateOrderLocationJob: Job? = null
+    // Coroutine Jobs
+    private var updateLocationJob: Job? = null
+    private var uploadLocationJob: Job? = null
+
+    // Data
+    private val _uploadLocation = MutableStateFlow<Location?>(null)
+    private val _travelMode = MutableStateFlow<TravelMode?>(null)
 
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
         // Stop the service when tracking is canceled from notification
@@ -84,7 +101,6 @@ class LocationService : Service() {
     }
 
     override fun onBind(intent: Intent?): IBinder {
-        // Stop the foreground service when bind
         stopForeground(true)
         runningInForeground = false
         configurationChange = false
@@ -122,61 +138,78 @@ class LocationService : Service() {
     }
 
     @RequiresPermission(Manifest.permission.ACCESS_FINE_LOCATION)
-    fun subscribeLocationUpdates(updateOrderId: String? = null) {
-        updateOrderLocationJob.cancelIfActive()
+    fun subscribeLocationUpdates(travelMode: TravelMode?) {
+        // Set travel mode
+        _travelMode.value = travelMode
 
         // Start the service
-        startService(
-            Intent(applicationContext, LocationService::class.java)
-        )
+        startService(Intent(applicationContext, LocationService::class.java))
+
+        startUploadLocation()
 
         // Observe location updates
-        updateOrderLocationJob = coroutineScope.launch {
-            fusedLocationProviderClient.locationFlow(locationRequest).collect { currentLocation ->
+        updateLocationJob = coroutineScope.launch {
+            fusedLocationProviderClient.locationFlow(locationRequest).collectLatest { location ->
                 // Notify our Activity that a new location was received.
-                Intent(ACTION_LOCATION_BROADCAST).apply {
-                    putExtra(EXTRA_LOCATION, currentLocation)
-                }.also {
-                    localBroadcastManager.sendBroadcast(it)
-                }
+                val broadcastNewLocationIntent = Intent(ACTION_LOCATION_BROADCAST)
+                broadcastNewLocationIntent.putExtra(EXTRA_LOCATION_BROADCAST_LOCATION, location)
+                localBroadcastManager.sendBroadcast(broadcastNewLocationIntent)
 
-                // TODO: Updates notification if the service is running as a foreground service.
+                // Updates notification if the service is running as a foreground service.
                 if (runningInForeground) {
-                    notificationManager.notify(
-                        NOTIFICATION_ID,
-                        generateNotification(currentLocation)
-                    )
+                    notificationManager.notify(NOTIFICATION_ID, generateNotification())
                 }
 
-                /*
-                updateOrderId?.let {
-                    val params = UpdateOrderLocationParameters(
-                        orderId = updateOrderId,
-                        geolocationPoint = GeolocationPoint(
-                            latitude = currentLocation.latitude,
-                            longitude = currentLocation.longitude
-                        )
-                    )
-                    updateOrderLocationUseCase(params)
-                } ?: emptyFlow()
-                }.collect {
-                    when (it) {
-                        is Resource.Success -> Log.d(TAG, "Updated order location.")
-                        is Resource.Error -> Log.d(TAG, "${it.message}")
-                        is Resource.Loading -> Unit
-                    }
-                }
-
-                 */
+                // Start upload new location to database
+                _uploadLocation.value = location
             }
         }
     }
 
     fun unsubscribeLocationUpdates() {
-        updateOrderLocationJob.cancelIfActive()
+        updateLocationJob.cancelIfActive()
+        uploadLocationJob.cancelIfActive()
     }
 
-    private fun generateNotification(location: Location? = null): Notification {
+    fun updateTravelMode(travelMode: TravelMode) {
+        _travelMode.value = travelMode
+    }
+
+    private fun startUploadLocation() {
+        val sectionIdFlow = getUserAuthStateUseCase(Unit)
+            .filterIsInstance<AuthState.Authenticated<UserDetail>>()
+            .mapLatest { it.data.sectionInDelivery }
+            .filterNotNull()
+
+        val uploadLocationFlow = _uploadLocation.filterNotNull()
+        val travelModeFlow = _travelMode.filterNotNull()
+
+        uploadLocationJob.cancelIfActive()
+        uploadLocationJob = coroutineScope.launch {
+            combine(uploadLocationFlow, sectionIdFlow, travelModeFlow) { location, sectionId, travelMode ->
+                UpdateSectionLocationParameters(
+                    sectionId = sectionId,
+                    locationPoint = GeolocationPoint(
+                        latitude = location.latitude,
+                        longitude = location.longitude
+                    ),
+                    travelMode = travelMode
+                )
+            }.onEach {
+                delay(LOCATION_UPLOAD_INTERVAL)
+            }.flatMapLatest { params ->
+                updateSectionLocationUseCase(params)
+            }.collectLatest {
+                when (it) {
+                    is Resource.Success -> Log.d(TAG, "Uploaded location.")
+                    is Resource.Error -> Log.d(TAG, "${it.message}")
+                    is Resource.Loading -> Unit
+                }
+            }
+        }
+    }
+
+    private fun generateNotification(): Notification {
         val activityPendingIntent = PendingIntent.getActivity(
             this,
             0,
@@ -200,8 +233,6 @@ class LocationService : Service() {
 
         return notificationBuilder
             .setContentTitle(getString(R.string.notification_tracking_title))
-            //.setContentText(getString(R.string.notification_tracking_body))
-            .setContentText("${location?.latitude}, ${location?.longitude}")
             .setSmallIcon(R.drawable.ic_restaurant)
             .setOngoing(true)
             .setPriority(NotificationCompat.PRIORITY_LOW)
@@ -233,8 +264,7 @@ class LocationService : Service() {
         private const val EXTRA_CANCEL_LOCATION_TRACKING_FROM_NOTIFICATION =
             "$PACKAGE_NAME.extra.CANCEL_LOCATION_TRACKING_FROM_NOTIFICATION"
 
-        const val EXTRA_LOCATION = "$PACKAGE_NAME.extra.LOCATION"
-
+        const val EXTRA_LOCATION_BROADCAST_LOCATION = "$PACKAGE_NAME.$TAG.extra.LOCATION"
         const val ACTION_LOCATION_BROADCAST =
             "$PACKAGE_NAME.action.FOREGROUND_ONLY_LOCATION_BROADCAST"
     }

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_list_item_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="@dimen/spacing_mlarge"
+    android:paddingHorizontal="@dimen/spacing_large"
+    android:foreground="?attr/selectableItemBackground"
+    android:background="?attr/colorSurface">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/user_photo_image_view"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Foobar.Circle"
+        app:layout_constraintTop_toTopOf="@id/username_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/order_items_count_text_view"
+        tools:src="@tools:sample/avatars"/>
+
+    <TextView
+        android:id="@+id/username_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_mlarge"
+        android:layout_marginEnd="@dimen/spacing_mlarge"
+        android:textAppearance="?attr/textAppearanceBody1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/user_photo_image_view"
+        app:layout_constraintEnd_toStartOf="@id/order_state_text_view"
+        tools:text="Chan Tai Man" />
+
+    <TextView
+        android:id="@+id/order_items_count_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_mlarge"
+        android:layout_marginTop="@dimen/spacing_xmedium"
+        android:textColor="@color/material_on_surface_emphasis_medium"
+        android:textAppearance="?attr/textAppearanceCaption"
+        app:layout_constraintTop_toBottomOf="@id/username_text_view"
+        app:layout_constraintStart_toEndOf="@id/user_photo_image_view"
+        tools:text="#12345 5 items in order" />
+
+    <TextView
+        android:id="@+id/order_state_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"
+        android:textColor="?attr/colorPrimary"
+        android:textAppearance="?attr/textAppearanceOverline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/username_text_view"
+        app:layout_constraintBottom_toBottomOf="@id/username_text_view"
+        tools:text="@string/section_user_list_item_pick_up" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

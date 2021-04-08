@@ -1,51 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/coordinator_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/map_container_view"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:name="com.google.android.gms.maps.SupportMapFragment"/>
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/fixed_camera_position_switch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/spacing_large"
-        android:text="Azimuth"
-        android:textAppearance="?attr/textAppearanceBody2"/>
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/nav_host_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"/>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/settings_button"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:layout_margin="@dimen/spacing_large"
-        android:insetLeft="@dimen/spacing_none"
-        android:insetTop="@dimen/spacing_none"
-        android:insetRight="@dimen/spacing_none"
-        android:insetBottom="@dimen/spacing_none"
-        android:layout_gravity="end"
-        app:icon="@drawable/ic_settings"
-        app:iconGravity="textStart"
-        app:iconPadding="@dimen/spacing_none"
-        app:iconTint="@color/material_on_surface_emphasis_medium"
-        app:backgroundTint="?attr/colorSurface"
-        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Foobar.Circle"/>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/bottom_drawer"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorSurface"
-        android:name="com.foobarust.deliverer.ui.bottomdrawer.BottomDrawerFragment"
-        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"/>
+        app:menu="@menu/menu_main" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>
 
 
 

@@ -3,27 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_settings"
-    app:startDestination="@id/settingsListFragment">
+    app:startDestination="@id/settingsFragment">
 
     <!-- SettingsFragment -->
     <fragment
-        android:id="@+id/settingsListFragment"
-        android:name="com.foobarust.deliverer.ui.settings.SettingsListFragment"
+        android:id="@+id/settingsFragment"
+        android:name="com.foobarust.deliverer.ui.settings.SettingsFragment"
         android:label="@string/nav_title_settings"
-        tools:layout="@layout/fragment_settings_list">
+        tools:layout="@layout/fragment_settings">
         <action
-            android:id="@+id/action_settingsListFragment_to_profileFragment"
+            android:id="@+id/action_settingsFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
         <action
-            android:id="@+id/action_settingsListFragment_to_sellerMiscFragment"
+            android:id="@+id/action_settingsFragment_to_sellerMiscFragment"
             app:destination="@id/sellerMiscFragment" />
         <action
-            android:id="@+id/action_settingsListFragment_to_licenseFragment"
+            android:id="@+id/action_settingsFragment_to_licenseFragment"
             app:destination="@id/licenseFragment" />
     </fragment>
 
     <!-- ProfileFragment -->
-    <fragment
+    <dialog
         android:id="@+id/profileFragment"
         android:name="com.foobarust.deliverer.ui.settings.ProfileFragment"
         android:label="@string/nav_title_profile"
@@ -31,10 +31,10 @@
         <action
             android:id="@+id/action_profileFragment_to_textInputDialog"
             app:destination="@id/textInputDialog" />
-    </fragment>
+    </dialog>
 
     <!-- LicenseFragment-->
-    <fragment
+    <dialog
         android:id="@+id/licenseFragment"
         android:name="com.foobarust.deliverer.ui.settings.LicenseFragment"
         android:label="@string/nav_title_license"

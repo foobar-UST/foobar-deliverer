@@ -4,45 +4,35 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
-import androidx.lifecycle.lifecycleScope
 import com.foobarust.deliverer.R
 import com.foobarust.deliverer.databinding.FragmentLicenseBinding
+import com.foobarust.deliverer.ui.shared.FullScreenDialogFragment
 import com.foobarust.deliverer.utils.AutoClearedValue
 import com.foobarust.deliverer.utils.findNavController
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.launch
 
-class LicenseFragment : Fragment() {
+class LicenseFragment : FullScreenDialogFragment() {
 
     private var binding: FragmentLicenseBinding by AutoClearedValue(this)
-    private val settingsViewModel: SettingsViewModel by hiltNavGraphViewModels(R.id.navigation_settings)
 
     override fun onCreateView(
         inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+        container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         binding = FragmentLicenseBinding.inflate(inflater, container, false)
-        return binding.root
-    }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        binding.toolbar.setNavigationOnClickListener {
+            findNavController(R.id.licenseFragment)?.navigateUp()
+        }
 
-        // Observe dialog back press and navigate up
-        viewLifecycleOwner.lifecycleScope.launch {
-            settingsViewModel.backPressed.collect {
-                findNavController(R.id.licenseFragment)?.navigateUp()
+        with(binding.licenseWebView) {
+            loadUrl("file:///android_asset/open_source_licenses.html")
+            settings.apply {
+                loadWithOverviewMode = true
+                useWideViewPort = true
+                builtInZoomControls = true
             }
         }
 
-        binding.licenseWebView.run {
-            loadUrl("file:///android_asset/open_source_licenses.html")
-            settings.loadWithOverviewMode = true
-            settings.useWideViewPort = true
-            settings.builtInZoomControls = true
-        }
+        return binding.root
     }
 }

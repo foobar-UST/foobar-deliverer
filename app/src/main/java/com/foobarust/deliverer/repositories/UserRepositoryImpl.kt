@@ -3,12 +3,17 @@ package com.foobarust.deliverer.repositories
 import android.net.Uri
 import com.foobarust.deliverer.api.RemoteService
 import com.foobarust.deliverer.constants.Constants.USERS_COLLECTION
+import com.foobarust.deliverer.constants.Constants.USERS_DELIVERY_COLLECTION
+import com.foobarust.deliverer.constants.Constants.USERS_PUBLIC_COLLECTION
 import com.foobarust.deliverer.constants.Constants.USER_PHOTOS_STORAGE_FOLDER
 import com.foobarust.deliverer.data.mappers.UserMapper
+import com.foobarust.deliverer.data.models.UserDelivery
 import com.foobarust.deliverer.data.models.UserDetail
+import com.foobarust.deliverer.data.models.UserPublic
 import com.foobarust.deliverer.data.request.UpdateUserDetailRequest
 import com.foobarust.deliverer.db.UserDetailDao
 import com.foobarust.deliverer.states.Resource
+import com.foobarust.deliverer.utils.getAwaitResult
 import com.foobarust.deliverer.utils.networkCacheResource
 import com.foobarust.deliverer.utils.putFileFlow
 import com.foobarust.deliverer.utils.snapshotFlow
@@ -66,5 +71,15 @@ class UserRepositoryImpl @Inject constructor(
         val photoRef = storageReference.child("$USER_PHOTOS_STORAGE_FOLDER/$photoFileName")
 
         return photoRef.putFileFlow(photoFile)
+    }
+
+    override suspend fun getUserPublicProfile(userId: String): UserPublic {
+        return firestore.document("$USERS_PUBLIC_COLLECTION/$userId")
+            .getAwaitResult(userMapper::toUserPublic)
+    }
+
+    override suspend fun getUserDeliveryProfile(userId: String): UserDelivery {
+        return firestore.document("$USERS_DELIVERY_COLLECTION/$userId")
+            .getAwaitResult(userMapper::toUserDelivery)
     }
 }

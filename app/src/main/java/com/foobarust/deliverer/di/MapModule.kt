@@ -12,6 +12,8 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
@@ -34,12 +36,19 @@ abstract class MapModule {
         @Singleton
         @Provides
         fun provideMapService(): MapService {
+            val client = OkHttpClient.Builder().apply {
+                addInterceptor(HttpLoggingInterceptor().apply {
+                    level = HttpLoggingInterceptor.Level.BODY
+                })
+            }.build()
+
             val gson = GsonBuilder().registerTypeAdapter(
                 DirectionsResponse::class.java,
                 DirectionsDeserializer()
             ).create()
 
             return Retrofit.Builder()
+                .client(client)
                 .baseUrl(MAPS_API_URL)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build()

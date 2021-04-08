@@ -9,41 +9,38 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import com.foobarust.deliverer.data.models.TravelMode
 
 /**
  * Created by kevin on 3/11/21
  */
 
-private const val TAG = "LocationService"
-
 class LocationServiceComponent(
     private val context: Context,
     private val localBroadcastManager: LocalBroadcastManager,
-    private val onServiceConnected: () -> Unit,
-    private val onServiceDisconnected: () -> Unit,
-    private val onLocationReceived: (Location) -> Unit
+    private val listener: LocationServiceComponentListener
 ) : LifecycleObserver {
     private var locationService: LocationService? = null
 
     private var locationServiceBound = false
+
+    private val locationBroadcastReceiver: LocationBroadcastReceiver by lazy {
+        LocationBroadcastReceiver()
+    }
 
     private val locationServiceConnection = object : ServiceConnection {
         override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
             val binder = service as LocationService.LocalBinder
             locationService = binder.service
             locationServiceBound = true
-            onServiceConnected()
+            listener.onLocationServiceConnected()
         }
 
         override fun onServiceDisconnected(name: ComponentName?) {
-            onServiceDisconnected()
             locationService = null
             locationServiceBound = false
+            listener.onLocationServiceDisconnected()
         }
-    }
-
-    private val locationBroadcastReceiver: LocationBroadcastReceiver by lazy {
-        LocationBroadcastReceiver()
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
@@ -79,12 +76,16 @@ class LocationServiceComponent(
     }
 
     @RequiresPermission(Manifest.permission.ACCESS_FINE_LOCATION)
-    fun subscribeLocationUpdates() {
-        locationService?.subscribeLocationUpdates()
+    fun subscribeLocationUpdates(travelMode: TravelMode? = null) {
+        locationService?.subscribeLocationUpdates(travelMode)
     }
 
     fun unsubscribeLocationUpdates() {
         locationService?.unsubscribeLocationUpdates()
+    }
+
+    fun updateTravelMode(travelMode: TravelMode) {
+        locationService?.updateTravelMode(travelMode)
     }
 
     fun stopLocationService() {
@@ -93,8 +94,17 @@ class LocationServiceComponent(
 
     private inner class LocationBroadcastReceiver : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
-            val location = intent.getParcelableExtra<Location>(LocationService.EXTRA_LOCATION)
-            location?.let { onLocationReceived(it) }
+            intent.getParcelableExtra<Location>(
+                LocationService.EXTRA_LOCATION_BROADCAST_LOCATION
+            )?.let {
+                listener.onLocationReceived(it)
+            }
         }
+    }
+
+    interface LocationServiceComponentListener {
+        fun onLocationServiceConnected()
+        fun onLocationServiceDisconnected()
+        fun onLocationReceived(location: Location)
     }
 }

@@ -1,6 +1,8 @@
 package com.foobarust.deliverer.repositories
 
+import com.foobarust.deliverer.data.models.UserDelivery
 import com.foobarust.deliverer.data.models.UserDetail
+import com.foobarust.deliverer.data.models.UserPublic
 import com.foobarust.deliverer.states.Resource
 import kotlinx.coroutines.flow.Flow
 
@@ -18,4 +20,8 @@ interface UserRepository {
     suspend fun removeUserDetailCache()
 
     fun uploadUserPhoto(userId: String, uri: String, extension: String): Flow<Resource<Unit>>
+
+    suspend fun getUserPublicProfile(userId: String): UserPublic
+
+    suspend fun getUserDeliveryProfile(userId: String): UserDelivery
 }

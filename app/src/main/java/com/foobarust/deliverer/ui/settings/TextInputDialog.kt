@@ -9,6 +9,7 @@ import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.foobarust.android.utils.showShortToast
 import com.foobarust.deliverer.R
 import com.foobarust.deliverer.databinding.DialogTextInputBinding

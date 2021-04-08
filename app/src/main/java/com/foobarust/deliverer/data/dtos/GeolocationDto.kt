@@ -6,10 +6,6 @@ import com.foobarust.deliverer.constants.Constants.GEO_LOCATION_GEOPOINT_FIELD
 import com.google.firebase.firestore.GeoPoint
 import com.google.firebase.firestore.PropertyName
 
-/**
- * Created by kevin on 10/11/20
- */
-
 data class GeolocationDto(
     @JvmField
     @PropertyName(GEO_LOCATION_ADDRESS_FIELD)

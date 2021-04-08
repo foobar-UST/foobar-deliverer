@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/spacing_xmedium"
+    android:padding="@dimen/spacing_large"
+    android:background="?attr/colorSurface">
+
+    <TextView
+        android:id="@+id/section_detail_location_title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/section_detail_location_title"
+        android:textAppearance="?attr/textAppearanceOverline"
+        android:textColor="@color/material_on_surface_emphasis_medium"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <ImageView
+        android:id="@+id/static_map_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toBottomOf="@id/section_detail_location_title_text_view"
+        tools:src="@tools:sample/avatars"/>
+
+    <TextView
+        android:id="@+id/location_address_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="@color/material_on_surface_emphasis_medium"
+        android:lineSpacingMultiplier="1.2"
+        app:layout_constraintTop_toBottomOf="@id/static_map_image_view"
+        tools:text="G/F, LSK Business Building, Hong Kong University of Science and Technology, Sai Kung\n香港科技大學LSK商業大樓地下"/>
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:id="@+id/location_map_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_xmedium"
+        android:text="@string/section_detail_location_map_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/location_address_text_view"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

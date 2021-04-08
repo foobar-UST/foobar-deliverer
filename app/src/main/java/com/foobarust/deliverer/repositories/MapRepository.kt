@@ -1,6 +1,7 @@
 package com.foobarust.deliverer.repositories
 
 import com.foobarust.deliverer.data.models.GeolocationPoint
+import com.foobarust.deliverer.data.models.TravelMode
 
 /**
  * Created by kevin on 3/8/21
@@ -9,7 +10,10 @@ import com.foobarust.deliverer.data.models.GeolocationPoint
 interface MapRepository {
 
     suspend fun getDirectionsPath(
-        originLatitude: Double, originLongitude: Double,
-        destLatitude: Double, destLongitude: Double
+        currentLocation: GeolocationPoint,
+        destination: GeolocationPoint,
+        travelMode: TravelMode
     ): List<GeolocationPoint>
+
+    fun getStaticMapImageUrl(centerLocation: GeolocationPoint): String
 }

@@ -23,8 +23,8 @@ import kotlinx.coroutines.flow.firstOrNull
 @AndroidEntryPoint
 class AuthActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityAuthBinding
     private lateinit var navController: NavController
+    private var binding: ActivityAuthBinding? = null
     private val viewModel: AuthViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,8 +38,9 @@ class AuthActivity : AppCompatActivity() {
             val startAuthNav = viewModel.startAuthNav.firstOrNull()
 
             if (startAuthNav != null) {
-                binding = ActivityAuthBinding.inflate(layoutInflater)
-                setContentView(binding.root)
+                binding = ActivityAuthBinding.inflate(layoutInflater).also {
+                    setContentView(it.root)
+                }
                 setupNavigation()
             }
         }

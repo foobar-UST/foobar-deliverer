@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_location"
+    app:startDestination="@id/locationFragment">
+
+    <!-- LocationFragment -->
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.foobarust.deliverer.ui.location.LocationFragment"
+        tools:layout="@layout/fragment_location">
+        <action
+            android:id="@+id/action_locationFragment_to_sectionDetailFragment"
+            app:destination="@id/sectionDetailFragment" />
+    </fragment>
+
+</navigation>

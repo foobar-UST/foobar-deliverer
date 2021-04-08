@@ -1,8 +1,8 @@
 package com.foobarust.deliverer.repositories
 
-import androidx.paging.PagingData
-import com.foobarust.deliverer.data.models.GeolocationPoint
 import com.foobarust.deliverer.data.models.OrderBasic
+import com.foobarust.deliverer.data.models.OrderDetail
+import com.foobarust.deliverer.states.Resource
 import kotlinx.coroutines.flow.Flow
 
 /**
@@ -11,11 +11,9 @@ import kotlinx.coroutines.flow.Flow
 
 interface OrderRepository {
 
-    fun getPendingOrders(sellerId: String): Flow<PagingData<OrderBasic>>
+    fun getOrderBasicsObservable(sectionId: String): Flow<Resource<List<OrderBasic>>>
 
-    suspend fun updateOrderLocation(
-        idToken: String,
-        orderId: String,
-        geolocationPoint: GeolocationPoint
-    )
+    fun getOrderDetailObservable(orderId: String): Flow<Resource<OrderDetail>>
+
+    suspend fun confirmOrderDelivered(idToken: String, orderId: String)
 }

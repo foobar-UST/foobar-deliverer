@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_section_user"
+    app:startDestination="@id/sectionUserListFragment">
+
+    <fragment
+        android:id="@+id/sectionUserListFragment"
+        android:name="com.foobarust.deliverer.ui.sectionuser.SectionUserListFragment"
+        tools:layout="@layout/fragment_section_user_list">
+        <action
+            android:id="@+id/action_sectionUserListFragment_to_sectionUserDetailFragment"
+            app:destination="@id/sectionUserDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/sectionUserDetailFragment"
+        android:name="com.foobarust.deliverer.ui.sectionuser.SectionUserDetailFragment"
+        tools:layout="@layout/fragment_section_user_detail">
+        <argument
+            android:name="property"
+            app:argType="com.foobarust.deliverer.ui.sectionuser.SectionUserDetailProperty"/>
+        <action
+            android:id="@+id/action_sectionUserDetailFragment_to_verifyDeliveryActivity"
+            app:destination="@id/verifyDeliveryActivity" />
+        <action
+            android:id="@+id/action_sectionUserDetailFragment_to_userInfoFragment"
+            app:destination="@id/userInfoFragment" />
+    </fragment>
+
+    <activity
+        android:id="@+id/verifyDeliveryActivity"
+        android:name="com.foobarust.deliverer.ui.verify.VerifyDeliveryActivity"
+        tools:layout="@layout/activity_verify_delivery">
+        <argument
+            android:name="orderId"
+            app:argType="string"/>
+        <argument
+            android:name="verifyCode"
+            app:argType="string"/>
+    </activity>
+
+    <dialog
+        android:id="@+id/userInfoFragment"
+        android:name="com.foobarust.deliverer.ui.sectionuser.UserInfoFragment"
+        tools:layout="@layout/fragment_user_info">
+        <argument
+            android:name="userId"
+            app:argType="string"/>
+    </dialog>
+
+</navigation>

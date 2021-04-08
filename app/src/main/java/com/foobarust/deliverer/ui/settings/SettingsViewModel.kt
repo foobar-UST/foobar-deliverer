@@ -2,21 +2,19 @@ package com.foobarust.deliverer.ui.settings
 
 import android.content.Context
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.foobarust.deliverer.R
 import com.foobarust.deliverer.data.models.UserDetail
 import com.foobarust.deliverer.ui.settings.SettingsListModel.SettingsAccountItemModel
 import com.foobarust.deliverer.ui.settings.SettingsListModel.SettingsSectionItemModel
-import com.foobarust.deliverer.ui.shared.BaseViewModel
 import com.foobarust.deliverer.usecases.AuthState
 import com.foobarust.deliverer.usecases.auth.GetUserAuthStateUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -30,10 +28,10 @@ const val SETTINGS_TERMS_CONDITIONS = "settings_terms_conditions"
 const val SETTINGS_SIGN_OUT = "settings_sign_out"
 
 @HiltViewModel
-class SettingsListViewModel @Inject constructor(
+class SettingsViewModel @Inject constructor(
     @ApplicationContext private val context: Context,
     private val getUserAuthStateUseCase: GetUserAuthStateUseCase
-) : BaseViewModel() {
+) : ViewModel() {
 
     private val _settingsListModels = MutableStateFlow<List<SettingsListModel>>(emptyList())
     val settingsListModels: StateFlow<List<SettingsListModel>> = _settingsListModels.asStateFlow()
@@ -41,6 +39,9 @@ class SettingsListViewModel @Inject constructor(
     private val _settingsUiState = MutableStateFlow(SettingsUiState.LOADING)
     val settingsUiState: LiveData<SettingsUiState> = _settingsUiState
         .asLiveData(viewModelScope.coroutineContext)
+
+    private val _snackBarMessage = Channel<String>()
+    val snackBarMessage: Flow<String> = _snackBarMessage.receiveAsFlow()
 
     init {
         // Observe auth state
@@ -61,6 +62,10 @@ class SettingsListViewModel @Inject constructor(
                 }
             }
         }
+    }
+
+    fun onShowSnackBarMessage(message: String) {
+        _snackBarMessage.offer(message)
     }
 
     private fun buildAuthenticatedListModels(

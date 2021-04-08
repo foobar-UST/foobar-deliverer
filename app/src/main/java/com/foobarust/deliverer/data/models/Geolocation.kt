@@ -10,6 +10,10 @@ data class Geolocation(
     val locationPoint: GeolocationPoint
 )
 
+fun Geolocation.getNormalizedAddress(): String {
+    return if (addressZh != null) "$address\n$addressZh" else address
+}
+
 data class GeolocationPoint(
     val latitude: Double,
     val longitude: Double

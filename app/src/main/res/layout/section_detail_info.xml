@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/spacing_xmedium"
+    android:padding="@dimen/spacing_large"
+    android:background="?attr/colorSurface">
+
+    <TextView
+        android:id="@+id/section_detail_info_title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/section_detail_info_title"
+        android:textAppearance="?attr/textAppearanceOverline"
+        android:textColor="@color/material_on_surface_emphasis_medium"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/section_id_title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_mlarge"
+        android:text="@string/section_detail_section_id_title"
+        android:textAppearance="?attr/textAppearanceBody2"
+        app:layout_constraintTop_toBottomOf="@id/description_text_view"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/section_id_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_mlarge"
+        android:layout_marginStart="@dimen/spacing_xmedium"
+        android:gravity="end"
+        android:textColor="@color/material_on_surface_emphasis_medium"
+        android:textAppearance="?attr/textAppearanceBody2"
+        app:layout_constraintTop_toBottomOf="@id/description_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/section_id_title_text_view"
+        tools:text="bc7fe0dc-4312-4ec3-85d5-3a69215c75e3"/>
+
+    <TextView
+        android:id="@+id/section_title_title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:text="@string/section_detail_section_title_title"
+        android:textAppearance="?attr/textAppearanceBody2"
+        app:layout_constraintTop_toBottomOf="@id/section_id_title_text_view"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/section_title_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:layout_marginStart="@dimen/spacing_xmedium"
+        android:gravity="end"
+        android:textColor="@color/material_on_surface_emphasis_medium"
+        android:textAppearance="?attr/textAppearanceBody2"
+        app:layout_constraintTop_toBottomOf="@id/section_id_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/section_title_title_text_view"
+        tools:text="Lunch Order - 午餐訂單"/>
+
+    <TextView
+        android:id="@+id/description_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:lineSpacingMultiplier="1.2"
+        android:textColor="@color/material_on_surface_emphasis_medium"
+        android:textAppearance="?attr/textAppearanceBody2"
+        app:layout_constraintTop_toBottomOf="@id/section_detail_info_title_text_view"
+        tools:text="Ordering food delivery for a group - whether for an office lunch or dinner at home—just got easier.\n為團體訂購食物（無論是在家中辦公室午餐還是晚餐），都變得更加容易。" />
+
+    <TextView
+        android:id="@+id/delivery_date_title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:text="@string/section_detail_delivery_date_title"
+        android:textAppearance="?attr/textAppearanceBody2"
+        app:layout_constraintTop_toBottomOf="@id/section_title_title_text_view"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/delivery_date_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:textColor="@color/material_on_surface_emphasis_medium"
+        android:textAppearance="?attr/textAppearanceBody2"
+        app:layout_constraintTop_toBottomOf="@id/section_title_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="2020-12-22"/>
+
+    <TextView
+        android:id="@+id/delivery_time_title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:text="@string/section_detail_delivery_time_title"
+        android:textAppearance="?attr/textAppearanceBody2"
+        app:layout_constraintTop_toBottomOf="@id/delivery_date_title_text_view"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/delivery_time_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:textColor="@color/material_on_surface_emphasis_medium"
+        android:textAppearance="?attr/textAppearanceBody2"
+        app:layout_constraintTop_toBottomOf="@id/delivery_date_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="12:30 PM" />
+
+    <TextView
+        android:id="@+id/users_count_title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:text="@string/section_detail_users_count_title"
+        android:textAppearance="?attr/textAppearanceBody2"
+        app:layout_constraintTop_toBottomOf="@id/delivery_time_title_text_view"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/users_count_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:textColor="@color/material_on_surface_emphasis_medium"
+        android:textAppearance="?attr/textAppearanceBody2"
+        app:layout_constraintTop_toBottomOf="@id/delivery_time_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="12 / 20"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

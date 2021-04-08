@@ -13,6 +13,7 @@ import com.foobarust.android.utils.showShortToast
 import com.foobarust.deliverer.R
 import com.foobarust.deliverer.data.models.*
 import com.foobarust.deliverer.databinding.FragmentSellerMiscBinding
+import com.foobarust.deliverer.ui.shared.AppConfig.MAP_ZOOM_LEVEL
 import com.foobarust.deliverer.ui.shared.FullScreenDialogFragment
 import com.foobarust.deliverer.utils.*
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -21,7 +22,6 @@ import com.google.android.gms.maps.model.MapStyleOptions
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.shape.MaterialShapeDrawable
 import com.google.maps.android.ktx.addMarker
-import com.google.maps.android.ktx.addPolyline
 import com.google.maps.android.ktx.awaitMap
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
@@ -31,15 +31,11 @@ import kotlinx.coroutines.launch
  * Created by kevin on 10/11/20
  */
 
-private const val MAP_ZOOM_LEVEL = 15f
-private const val MAP_ROUTE_WIDTH = 10f
-
 @AndroidEntryPoint
 class SellerMiscFragment : FullScreenDialogFragment() {
 
     private var binding: FragmentSellerMiscBinding by AutoClearedValue(this)
     private val viewModel: SellerMiscViewModel by viewModels()
-    private var bottomSheetBehavior: BottomSheetBehavior<*> by AutoClearedValue(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,9 +50,42 @@ class SellerMiscFragment : FullScreenDialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentSellerMiscBinding.inflate(inflater, container, false).apply {
+        binding = FragmentSellerMiscBinding.inflate(inflater, container, false)
+
+        // Extend map to fullscreen
+        with(binding) {
             root.applyLayoutFullscreen()
             toolbarLayout.applySystemWindowInsetsPadding(applyTop = true)
+        }
+
+        // Attach map fragment
+        childFragmentManager.beginTransaction()
+            .replace(R.id.map_container, SupportMapFragment.newInstance())
+            .commitNow()
+
+        // Set map night mode
+        viewLifecycleOwner.lifecycleScope.launch {
+            if (requireContext().isNightModeOn()) {
+                getSupportMapFragment()?.awaitMap()?.run {
+                    val nightStyle = MapStyleOptions.loadRawResourceStyle(
+                        requireContext(),
+                        R.raw.night_map_style
+                    )
+                    setMapStyle(nightStyle)
+                }
+            }
+        }
+
+        // Add seller coordinate
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.sellerLocation.collect { location ->
+                location?.let {
+                    getSupportMapFragment()?.awaitMap()?.run {
+                        addMarker { position(it) }
+                        moveCamera(CameraUpdateFactory.newLatLngZoom(it, MAP_ZOOM_LEVEL))
+                    }
+                }
+            }
         }
 
         // Setup toolbar
@@ -65,7 +94,7 @@ class SellerMiscFragment : FullScreenDialogFragment() {
         }
 
         // Setup bottom sheet
-        bottomSheetBehavior = BottomSheetBehavior.from(binding.bottomSheet)
+        val bottomSheetBehavior = BottomSheetBehavior.from(binding.bottomSheet)
 
         with(binding.bottomSheet) {
             background = MaterialShapeDrawable(context, null,
@@ -99,7 +128,7 @@ class SellerMiscFragment : FullScreenDialogFragment() {
                 bottomSheetBehavior.hideIf(uiState !is SellerMiscUiState.Success)
 
                 with(binding) {
-                    loadingProgressBar.progressHideIf(uiState !is SellerMiscUiState.Loading)
+                    loadingProgressBar.hideIf(uiState !is SellerMiscUiState.Loading)
                     retryButton.isVisible = uiState is SellerMiscUiState.Error
                 }
 
@@ -111,63 +140,7 @@ class SellerMiscFragment : FullScreenDialogFragment() {
             }
         }
 
-        // Show toast
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.toastMessage.collect {
-                showShortToast(it)
-            }
-        }
-
         return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        // Attach map fragment
-        childFragmentManager.beginTransaction()
-            .replace(R.id.map_container, SupportMapFragment.newInstance())
-            .commitNow()
-
-        // Set map night mode
-        viewLifecycleOwner.lifecycleScope.launch {
-            if (requireContext().isNightModeOn()) {
-                getSupportMapFragment()?.awaitMap()?.run {
-                    val nightStyle = MapStyleOptions.loadRawResourceStyle(
-                        requireContext(),
-                        R.raw.night_map_style
-                    )
-                    setMapStyle(nightStyle)
-                }
-            }
-        }
-
-        // Add seller coordinate
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.sellerLocation.collect { location ->
-                location?.let {
-                    getSupportMapFragment()?.awaitMap()?.run {
-                        addMarker { position(it) }
-                        moveCamera(CameraUpdateFactory.newLatLngZoom(it, MAP_ZOOM_LEVEL))
-                    }
-                }
-            }
-        }
-
-        // Add seller route
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.offCampusDeliveryRoute.collect { route ->
-                if (route.isNotEmpty()) {
-                    getSupportMapFragment()?.awaitMap()?.run {
-                        addPolyline {
-                            color(requireContext().themeColor(R.attr.colorSecondary))
-                            width(MAP_ROUTE_WIDTH)
-                            addAll(route)
-                        }
-                    }
-                }
-            }
-        }
     }
 
     private fun setupSellerMiscLayout(sellerDetail: SellerDetail) = binding.run {
@@ -178,13 +151,13 @@ class SellerMiscFragment : FullScreenDialogFragment() {
 
         with(phoneNumTextView) {
             text = sellerDetail.phoneNum
-            setDrawableFitVertical()
+            drawableFitVertical()
         }
 
         with(websiteTextView) {
             text = sellerDetail.website
             isGone = sellerDetail.website.isNullOrBlank()
-            setDrawableFitVertical()
+            drawableFitVertical()
         }
 
         addressTextView.text = sellerDetail.getNormalizedAddress()

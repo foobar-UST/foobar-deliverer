@@ -4,10 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
-import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.lifecycleScope
@@ -17,9 +15,10 @@ import com.foobarust.android.utils.showShortToast
 import com.foobarust.deliverer.R
 import com.foobarust.deliverer.databinding.FragmentProfileBinding
 import com.foobarust.deliverer.ui.main.MainViewModel
+import com.foobarust.deliverer.ui.shared.FullScreenDialogFragment
 import com.foobarust.deliverer.utils.AutoClearedValue
 import com.foobarust.deliverer.utils.findNavController
-import com.foobarust.deliverer.utils.progressHideIf
+import com.foobarust.deliverer.utils.hideIf
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
@@ -30,11 +29,10 @@ import kotlinx.coroutines.launch
  */
 
 @AndroidEntryPoint
-class ProfileFragment : Fragment(), ProfileAdapter.ProfileAdapterListener {
+class ProfileFragment : FullScreenDialogFragment(), ProfileAdapter.ProfileAdapterListener {
 
     private var binding: FragmentProfileBinding by AutoClearedValue(this)
     private val mainViewModel: MainViewModel by activityViewModels()
-    private val settingsViewModel: SettingsViewModel by hiltNavGraphViewModels(R.id.navigation_settings)
     private val profileViewModel: ProfileViewModel by viewModels()
     private var textInputResultObserver: LifecycleEventObserver? = null
 
@@ -44,6 +42,10 @@ class ProfileFragment : Fragment(), ProfileAdapter.ProfileAdapterListener {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentProfileBinding.inflate(inflater, container, false)
+
+        binding.toolbar.setNavigationOnClickListener {
+            findNavController(R.id.profileFragment)?.navigateUp()
+        }
 
         // Setup recycler view
         val profileAdapter = ProfileAdapter(this)
@@ -59,7 +61,7 @@ class ProfileFragment : Fragment(), ProfileAdapter.ProfileAdapterListener {
         }
 
         profileViewModel.profileUiState.observe(viewLifecycleOwner) {
-            binding.loadingProgressBar.progressHideIf(it !is ProfileUiState.Loading)
+            binding.loadingProgressBar.hideIf(it !is ProfileUiState.Loading)
 
             if (it is ProfileUiState.Error) {
                 showShortToast(it.message)
@@ -77,26 +79,12 @@ class ProfileFragment : Fragment(), ProfileAdapter.ProfileAdapterListener {
             }
         }
 
-        // Observe dialog back press and navigate up
-        viewLifecycleOwner.lifecycleScope.launch {
-            settingsViewModel.backPressed.collect {
-                findNavController(R.id.profileFragment)?.navigateUp()
-            }
-        }
-
         // Show snack bar message
         viewLifecycleOwner.lifecycleScope.launch {
             profileViewModel.snackBarMessage.collect {
                 showMessageSnackBar(it)
             }
         }
-
-        return binding.root
-    }
-
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
         // Remove observer when the view is destroyed
         val navBackStackEntry = findNavController().getBackStackEntry(R.id.profileFragment)
@@ -105,6 +93,8 @@ class ProfileFragment : Fragment(), ProfileAdapter.ProfileAdapterListener {
                 unsubscribeTextInputResult(navBackStackEntry)
             }
         })
+
+        return binding.root
     }
 
     override fun onProfileAvatarClicked() {

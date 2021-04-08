@@ -7,10 +7,6 @@ import com.foobarust.deliverer.constants.Constants.SELLER_RATING_COUNT_POOR_FIEL
 import com.foobarust.deliverer.constants.Constants.SELLER_RATING_COUNT_VERY_GOOD_FIELD
 import com.google.firebase.firestore.PropertyName
 
-/**
- * Created by kevin on 3/8/21
- */
-
 data class SellerRatingCountDto(
     @JvmField
     @PropertyName(SELLER_RATING_COUNT_EXCELLENT_FIELD)

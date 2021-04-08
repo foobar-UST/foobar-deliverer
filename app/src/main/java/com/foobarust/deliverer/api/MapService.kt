@@ -3,6 +3,7 @@ package com.foobarust.deliverer.api
 import com.foobarust.deliverer.constants.Constants.MAPS_DIRECTIONS_END_POINT
 import com.foobarust.deliverer.constants.Constants.MAPS_DIRECTIONS_PARAM_DEST
 import com.foobarust.deliverer.constants.Constants.MAPS_DIRECTIONS_PARAM_KEY
+import com.foobarust.deliverer.constants.Constants.MAPS_DIRECTIONS_PARAM_MODE
 import com.foobarust.deliverer.constants.Constants.MAPS_DIRECTIONS_PARAM_ORIGIN
 import com.foobarust.deliverer.data.response.DirectionsResponse
 import com.google.android.gms.maps.model.LatLng
@@ -25,6 +26,7 @@ interface MapService {
     suspend fun getDirections(
         @Query(MAPS_DIRECTIONS_PARAM_KEY) key: String,
         @Query(MAPS_DIRECTIONS_PARAM_ORIGIN) origin: String,
-        @Query(MAPS_DIRECTIONS_PARAM_DEST) destination: String
+        @Query(MAPS_DIRECTIONS_PARAM_DEST) destination: String,
+        @Query(MAPS_DIRECTIONS_PARAM_MODE) travelMode: String
     ): DirectionsResponse
 }

@@ -16,7 +16,8 @@ data class UserDetail(
     val roles: List<UserRole>,
     val updatedAt: Date? = null,
     val createdRest: Boolean? = null,
-    val employedBy: String? = null
+    val employedBy: String? = null,
+    val sectionInDelivery: String? = null
 )
 
 fun UserDetail.isDataCompleted(): Boolean {

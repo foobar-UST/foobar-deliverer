@@ -21,10 +21,6 @@ import com.foobarust.deliverer.constants.Constants.ORDER_USER_ID_FIELD
 import com.google.firebase.Timestamp
 import com.google.firebase.firestore.PropertyName
 
-/**
- * Created by kevin on 1/28/21
- */
-
 data class OrderBasicDto(
     @JvmField
     @PropertyName(ORDER_ID_FIELD)

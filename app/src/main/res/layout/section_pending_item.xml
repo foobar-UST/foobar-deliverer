@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/section_pending_item_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorSurface"
+    android:foreground="?attr/selectableItemBackground"
+    android:padding="@dimen/spacing_large">
+
+    <TextView
+        android:id="@+id/section_title_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_xmedium"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        android:lineSpacingMultiplier="1.2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/section_image_view"
+        tools:text="Lunch Order 午餐訂單\n@ 12:30 PM" />
+
+    <TextView
+        android:id="@+id/section_delivery_time_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_xmedium"
+        android:layout_marginEnd="@dimen/spacing_xmedium"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="@color/material_on_surface_emphasis_medium"
+        app:layout_constraintTop_toBottomOf="@id/section_title_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/section_image_view"
+        tools:text="Deliver Before 12:30 PM"/>
+
+    <TextView
+        android:id="@+id/section_users_count_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_xmedium"
+        android:layout_marginTop="@dimen/spacing_xmedium"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="@color/material_on_surface_emphasis_medium"
+        app:layout_constraintTop_toBottomOf="@id/section_delivery_time_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/section_image_view"
+        tools:text="18/20 Users Joined"/>
+
+    <TextView
+        android:id="@+id/section_pending_message_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_xmedium"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:textAppearance="?attr/textAppearanceOverline"
+        android:textColor="?attr/colorPrimary"
+        android:text="@string/section_pending_item_pending_message"
+        app:layout_constraintTop_toBottomOf="@id/section_users_count_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/section_image_view" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/section_image_view"
+        android:layout_width="84dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="@dimen/spacing_xmedium"
+        android:scaleType="centerCrop"
+        app:shapeAppearance="@style/ShapeAppearance.Foobar.SmallComponent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/section_title_text_view"
+        tools:src="@tools:sample/avatars"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

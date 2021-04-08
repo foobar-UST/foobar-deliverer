@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/loading_progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/load_success_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="deliver_to_text_view,delivery_time_left_text_view,delivery_location_text_view,section_detail_button" />
+
+    <TextView
+        android:id="@+id/deliver_to_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:layout_marginHorizontal="@dimen/spacing_large"
+        android:text="@string/section_transit_title"
+        android:textAppearance="?attr/textAppearanceOverline"
+        android:textColor="@color/material_on_surface_emphasis_medium"
+        app:layout_constraintTop_toBottomOf="@id/loading_progress_bar"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/delivery_time_left_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_xmedium"
+        android:layout_marginHorizontal="@dimen/spacing_large"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        app:layout_constraintTop_toBottomOf="@id/deliver_to_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="15 Mins Left - 12:30 PM"/>
+
+    <TextView
+        android:id="@+id/delivery_location_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_xmedium"
+        android:layout_marginHorizontal="@dimen/spacing_large"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="@color/material_on_surface_emphasis_medium"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:lineSpacingMultiplier="1.2"
+        app:layout_constraintTop_toBottomOf="@id/delivery_time_left_text_view"
+        tools:text="G/F, LSK Business Building, Hong Kong University of Science and Technology, Sai Kung" />
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:id="@+id/section_detail_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_xmedium"
+        android:layout_marginStart="@dimen/spacing_xmedium"
+        android:layout_marginBottom="@dimen/spacing_large"
+        android:text="@string/section_transit_order_detail_button"
+        app:icon="@drawable/ic_arrow_forward"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/delivery_location_text_view"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <include
+        layout="@layout/load_error_layout"
+        android:id="@+id/load_error_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/spacing_large"
+        app:layout_goneMarginTop="@dimen/spacing_none"
+        app:layout_goneMarginBottom="@dimen/spacing_none"
+        app:layout_constraintTop_toBottomOf="@id/loading_progress_bar"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
