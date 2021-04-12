@@ -3,7 +3,6 @@ package com.foobarust.deliverer.utils
 import android.Manifest
 import android.location.Location
 import android.os.Looper
-import android.util.Log
 import androidx.annotation.RequiresPermission
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
@@ -26,7 +25,6 @@ fun FusedLocationProviderClient.locationFlow(
     val callback = object : LocationCallback() {
         override fun onLocationResult(result: LocationResult?) {
             result?.let {
-                Log.d(TAG, "latitude: ${it.lastLocation.latitude}, longitude: ${it.lastLocation.longitude}")
                 channel.offer(it.lastLocation)
             }
         }

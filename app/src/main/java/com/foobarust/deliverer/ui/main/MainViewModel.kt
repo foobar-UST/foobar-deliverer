@@ -10,6 +10,11 @@ import com.foobarust.deliverer.data.models.SellerSectionState
 import com.foobarust.deliverer.data.models.TravelMode
 import com.foobarust.deliverer.di.ApplicationScope
 import com.foobarust.deliverer.states.Resource
+import com.foobarust.deliverer.ui.shared.AppConfig.ARRIVE_DESTINATION_RANGE_METER
+import com.foobarust.deliverer.ui.shared.AppConfig.CENTER_CAMERA_INTERVAL
+import com.foobarust.deliverer.ui.shared.AppConfig.GET_DIRECTIONS_DRIVING_INTERVAL
+import com.foobarust.deliverer.ui.shared.AppConfig.GET_DIRECTIONS_RANGE_METER
+import com.foobarust.deliverer.ui.shared.AppConfig.GET_DIRECTIONS_WALKING_INTERVAL
 import com.foobarust.deliverer.ui.shared.BaseViewModel
 import com.foobarust.deliverer.usecases.AuthState
 import com.foobarust.deliverer.usecases.auth.GetUserAuthStateUseCase
@@ -35,12 +40,6 @@ import javax.inject.Inject
 /**
  * Created by kevin on 2/17/21
  */
-
-private const val GET_DIRECTIONS_WALKING_INTERVAL = 30000L
-private const val GET_DIRECTIONS_DRIVING_INTERVAL = 10000L
-private const val GET_DIRECTIONS_RANGE_METER = 50L
-private const val ARRIVE_DESTINATION_RANGE_METER = 100L
-private const val CENTER_CAMERA_INTERVAL = 2000L
 
 @HiltViewModel
 class MainViewModel @Inject constructor(

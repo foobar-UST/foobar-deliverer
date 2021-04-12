@@ -81,7 +81,7 @@ class LocationService : Service() {
     private var updateLocationJob: Job? = null
     private var uploadLocationJob: Job? = null
 
-    // Data
+    // Location data
     private val _uploadLocation = MutableStateFlow<Location?>(null)
     private val _travelMode = MutableStateFlow<TravelMode?>(null)
 
@@ -140,30 +140,15 @@ class LocationService : Service() {
     @RequiresPermission(Manifest.permission.ACCESS_FINE_LOCATION)
     fun subscribeLocationUpdates(travelMode: TravelMode?) {
         // Set travel mode
-        _travelMode.value = travelMode
+        travelMode?.let {
+            updateTravelMode(it)
+        }
 
         // Start the service
         startService(Intent(applicationContext, LocationService::class.java))
 
-        startUploadLocation()
-
-        // Observe location updates
-        updateLocationJob = coroutineScope.launch {
-            fusedLocationProviderClient.locationFlow(locationRequest).collectLatest { location ->
-                // Notify our Activity that a new location was received.
-                val broadcastNewLocationIntent = Intent(ACTION_LOCATION_BROADCAST)
-                broadcastNewLocationIntent.putExtra(EXTRA_LOCATION_BROADCAST_LOCATION, location)
-                localBroadcastManager.sendBroadcast(broadcastNewLocationIntent)
-
-                // Updates notification if the service is running as a foreground service.
-                if (runningInForeground) {
-                    notificationManager.notify(NOTIFICATION_ID, generateNotification())
-                }
-
-                // Start upload new location to database
-                _uploadLocation.value = location
-            }
-        }
+        startObserveLocation()
+        startUploadSectionLocation()
     }
 
     fun unsubscribeLocationUpdates() {
@@ -175,7 +160,27 @@ class LocationService : Service() {
         _travelMode.value = travelMode
     }
 
-    private fun startUploadLocation() {
+    @RequiresPermission(Manifest.permission.ACCESS_FINE_LOCATION)
+    private fun startObserveLocation() {
+        updateLocationJob = coroutineScope.launch {
+            fusedLocationProviderClient.locationFlow(locationRequest).collectLatest { location ->
+                // Send location to activity
+                val broadcastNewLocationIntent = Intent(ACTION_LOCATION_BROADCAST)
+                broadcastNewLocationIntent.putExtra(EXTRA_LOCATION_BROADCAST_LOCATION, location)
+                localBroadcastManager.sendBroadcast(broadcastNewLocationIntent)
+
+                // Updates foreground notification.
+                if (runningInForeground) {
+                    notificationManager.notify(NOTIFICATION_ID, generateNotification())
+                }
+
+                // Start upload new location to database
+                _uploadLocation.value = location
+            }
+        }
+    }
+
+    private fun startUploadSectionLocation() {
         val sectionIdFlow = getUserAuthStateUseCase(Unit)
             .filterIsInstance<AuthState.Authenticated<UserDetail>>()
             .mapLatest { it.data.sectionInDelivery }
@@ -201,9 +206,9 @@ class LocationService : Service() {
                 updateSectionLocationUseCase(params)
             }.collectLatest {
                 when (it) {
-                    is Resource.Success -> Log.d(TAG, "Uploaded location.")
+                    is Resource.Success -> Unit
                     is Resource.Error -> Log.d(TAG, "${it.message}")
-                    is Resource.Loading -> Unit
+                    is Resource.Loading -> Log.d(TAG, "Uploading location: $LOCATION_UPLOAD_INTERVAL ms")
                 }
             }
         }

@@ -43,7 +43,7 @@ android {
             manifestPlaceholders = [
                 mapsApiKey: mapsApiKey,
                 clearTextTraffic: true,
-                disableAnalytics: true
+                disableAnalytics: false
             ]
         }
 
@@ -54,7 +54,7 @@ android {
             manifestPlaceholders = [
                 mapsApiKey: mapsApiKey,
                 clearTextTraffic: false,
-                disableAnalytics: true
+                disableAnalytics: false
             ]
         }
     }

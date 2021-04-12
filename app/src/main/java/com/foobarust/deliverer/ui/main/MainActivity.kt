@@ -216,10 +216,9 @@ class MainActivity : AppCompatActivity(),
     }
 
     private fun navigateToAuth() {
-        Intent(this, AuthActivity::class.java).apply {
-            startActivity(intent)
-            finish()
-        }
+        val intent = Intent(this, AuthActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }
 

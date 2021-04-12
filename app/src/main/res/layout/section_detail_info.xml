@@ -50,7 +50,7 @@
         android:layout_marginTop="@dimen/spacing_large"
         android:text="@string/section_detail_section_title_title"
         android:textAppearance="?attr/textAppearanceBody2"
-        app:layout_constraintTop_toBottomOf="@id/section_id_title_text_view"
+        app:layout_constraintTop_toBottomOf="@id/section_id_text_view"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
@@ -85,7 +85,7 @@
         android:layout_marginTop="@dimen/spacing_large"
         android:text="@string/section_detail_delivery_date_title"
         android:textAppearance="?attr/textAppearanceBody2"
-        app:layout_constraintTop_toBottomOf="@id/section_title_title_text_view"
+        app:layout_constraintTop_toBottomOf="@id/section_title_text_view"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
@@ -106,7 +106,7 @@
         android:layout_marginTop="@dimen/spacing_large"
         android:text="@string/section_detail_delivery_time_title"
         android:textAppearance="?attr/textAppearanceBody2"
-        app:layout_constraintTop_toBottomOf="@id/delivery_date_title_text_view"
+        app:layout_constraintTop_toBottomOf="@id/delivery_date_text_view"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
@@ -127,7 +127,7 @@
         android:layout_marginTop="@dimen/spacing_large"
         android:text="@string/section_detail_users_count_title"
         android:textAppearance="?attr/textAppearanceBody2"
-        app:layout_constraintTop_toBottomOf="@id/delivery_time_title_text_view"
+        app:layout_constraintTop_toBottomOf="@id/delivery_time_text_view"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
