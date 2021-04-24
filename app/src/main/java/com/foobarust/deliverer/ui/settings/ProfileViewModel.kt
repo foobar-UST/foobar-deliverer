@@ -7,7 +7,7 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.foobarust.deliverer.R
 import com.foobarust.deliverer.data.models.UserDetail
-import com.foobarust.deliverer.data.models.isDataCompleted
+import com.foobarust.deliverer.data.models.isProfileCompleted
 import com.foobarust.deliverer.states.Resource
 import com.foobarust.deliverer.states.getSuccessDataOr
 import com.foobarust.deliverer.ui.settings.ProfileListModel.*
@@ -126,7 +126,7 @@ class ProfileViewModel @Inject constructor(
 
         return buildList {
             // Add warning message section
-            if (!userDetail.isDataCompleted()) {
+            if (!userDetail.isProfileCompleted()) {
                 add(ProfileNoticeItemModel(
                     message = context.getString(R.string.profile_require_data_for_delivery)
                 ))

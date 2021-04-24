@@ -20,7 +20,7 @@ data class UserDetail(
     val sectionInDelivery: String? = null
 )
 
-fun UserDetail.isDataCompleted(): Boolean {
+fun UserDetail.isProfileCompleted(): Boolean {
     return !name.isNullOrEmpty() && !phoneNum.isNullOrEmpty()
 }
 
