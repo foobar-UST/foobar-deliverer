@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -12,6 +11,7 @@ import com.foobarust.android.utils.showShortToast
 import com.foobarust.deliverer.R
 import com.foobarust.deliverer.databinding.ActivityAuthBinding
 import com.foobarust.deliverer.ui.main.MainActivity
+import com.foobarust.deliverer.utils.setLayoutFullscreen
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.firstOrNull
@@ -30,17 +30,16 @@ class AuthActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.Theme_Foobar_Auth_DayNight)
         super.onCreate(savedInstanceState)
-
-        WindowCompat.setDecorFitsSystemWindows(window, false)
+        setLayoutFullscreen(aboveNavBar = true)
 
         // Setup navigation
         lifecycleScope.launchWhenCreated {
             val startAuthNav = viewModel.startAuthNav.firstOrNull()
-
             if (startAuthNav != null) {
                 binding = ActivityAuthBinding.inflate(layoutInflater).also {
                     setContentView(it.root)
                 }
+
                 setupNavigation()
             }
         }

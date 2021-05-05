@@ -99,6 +99,8 @@
     <string name="section_detail_start_delivery_button_content_description">Show My Location</string>
     <string name="section_detail_start_delivery_confirm_dialog_title">Start Delivery</string>
     <string name="section_detail_start_delivery_confirm_dialog_message">Are you sure to start the following delivery?\n\nOrder: %s\nDeliver On: %s %s\nRestaurant: %s</string>
+    <string name="section_detail_complete_delivery_confirm_dialog_title">Complete Delivery</string>
+    <string name="section_detail_complete_delivery_confirm_dialog_message">Are you sure to complete the current delivery?</string>
     <string name="section_detail_cancel_delivery_confirm_dialog_title">Cancel Delivery</string>
     <string name="section_detail_cancel_delivery_confirm_dialog_message">Are you sure to cancel the current delivery?</string>
     <string name="section_detail_complete_delivery_button">Complete Delivery</string>

@@ -59,7 +59,6 @@ class SectionDetailFragment : FullScreenDialogFragment(),
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentSectionDetailBinding.inflate(inflater, container, false).apply {
-            root.applyLayoutFullscreen()
             appBarLayout.applySystemWindowInsetsPadding(applyTop = true)
         }
 
@@ -174,6 +173,11 @@ class SectionDetailFragment : FullScreenDialogFragment(),
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setLayoutFullscreen(aboveNavBar = true)
+    }
+
     override fun onShowSellerDetail() {
         findNavController(R.id.sectionDetailFragment)?.navigate(
             SectionDetailFragmentDirections.actionSectionDetailFragmentToSellerMiscFragment()
@@ -202,7 +206,16 @@ class SectionDetailFragment : FullScreenDialogFragment(),
     }
 
     override fun onCompleteDelivery() {
-        viewModel.onCompleteSectionDelivery()
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle(getString(R.string.section_detail_complete_delivery_confirm_dialog_title))
+            .setMessage(getString(R.string.section_detail_complete_delivery_confirm_dialog_message))
+            .setPositiveButton(android.R.string.ok) { _, _ ->
+                viewModel.onCompleteSectionDelivery()
+            }
+            .setNegativeButton(android.R.string.cancel) { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
     }
 
     override fun onCancelDelivery() {

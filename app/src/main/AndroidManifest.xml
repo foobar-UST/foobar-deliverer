@@ -73,7 +73,7 @@
 
         <meta-data
             android:name="firebase_analytics_collection_deactivated"
-            android:value="${disableAnalytics}"/>
+            android:value="false"/>
 
         <!-- Download mlkit model from Play Services automatically -->
         <meta-data

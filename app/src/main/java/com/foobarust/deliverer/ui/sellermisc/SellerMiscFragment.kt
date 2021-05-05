@@ -50,11 +50,7 @@ class SellerMiscFragment : FullScreenDialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentSellerMiscBinding.inflate(inflater, container, false)
-
-        // Extend map to fullscreen
-        with(binding) {
-            root.applyLayoutFullscreen()
+        binding = FragmentSellerMiscBinding.inflate(inflater, container, false).apply {
             toolbarLayout.applySystemWindowInsetsPadding(applyTop = true)
         }
 
@@ -141,6 +137,11 @@ class SellerMiscFragment : FullScreenDialogFragment() {
         }
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setLayoutFullscreen(aboveNavBar = true)
     }
 
     private fun setupSellerMiscLayout(sellerDetail: SellerDetail) = binding.run {

@@ -33,7 +33,6 @@ class SectionUserFragment : FullScreenDialogFragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentSectionUserBinding.inflate(inflater, container, false).apply {
-            root.applyLayoutFullscreen()
             appBarLayout.applySystemWindowInsetsPadding(applyTop = true)
         }
 
@@ -69,6 +68,11 @@ class SectionUserFragment : FullScreenDialogFragment() {
         }
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setLayoutFullscreen(aboveNavBar = true)
     }
 
     private fun handleBackPressed() {

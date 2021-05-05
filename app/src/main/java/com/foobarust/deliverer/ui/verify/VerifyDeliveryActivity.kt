@@ -18,10 +18,10 @@ import com.foobarust.android.utils.showShortToast
 import com.foobarust.deliverer.R
 import com.foobarust.deliverer.databinding.ActivityVerifyDeliveryBinding
 import com.foobarust.deliverer.states.Resource
-import com.foobarust.deliverer.utils.applyLayoutFullscreen
 import com.foobarust.deliverer.utils.applySystemWindowInsetsPadding
 import com.foobarust.deliverer.utils.buildApplicationDetailSettingsIntent
 import com.foobarust.deliverer.utils.isPermissionGranted
+import com.foobarust.deliverer.utils.setLayoutFullscreen
 import com.google.android.material.snackbar.Snackbar
 import com.google.mlkit.vision.barcode.BarcodeScanner
 import dagger.hilt.android.AndroidEntryPoint
@@ -95,10 +95,10 @@ class VerifyDeliveryActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setLayoutFullscreen(aboveNavBar = true)
 
         binding = ActivityVerifyDeliveryBinding.inflate(layoutInflater).apply {
             setContentView(root)
-            root.applyLayoutFullscreen()
             appBarLayout.applySystemWindowInsetsPadding(applyTop = true)
         }
 

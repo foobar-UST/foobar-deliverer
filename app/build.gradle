@@ -43,7 +43,6 @@ android {
             manifestPlaceholders = [
                 mapsApiKey: mapsApiKey,
                 clearTextTraffic: true,
-                disableAnalytics: false
             ]
         }
 
@@ -54,7 +53,6 @@ android {
             manifestPlaceholders = [
                 mapsApiKey: mapsApiKey,
                 clearTextTraffic: false,
-                disableAnalytics: false
             ]
         }
     }
@@ -134,18 +132,7 @@ dependencies {
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
     kapt "androidx.room:room-compiler:$room_version"
 
-    // Test dependencies
-    androidTestImplementation "androidx.test:core:$test_core_version"
-    androidTestImplementation "androidx.test:runner:$test_runner_version"
-    androidTestImplementation "androidx.test:rules:$test_rules_version"
-    androidTestImplementation "com.google.dagger:hilt-android-testing:$hilt_version"
-
     kaptAndroidTest "com.google.dagger:hilt-android-compiler:$hilt_version"
 
     testImplementation "junit:junit:$junit_version"
-    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutine_version"
-
-    //testImplementation 'junit:junit:4.+'
-    //androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    //androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
