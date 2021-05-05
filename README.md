@@ -28,7 +28,7 @@ Food ordering and delivery services such as FoodPanda serve individual customers
 
 ## Device Requirements
 
-* Android 5.0+ (API level 21).
+* Android 6.0+ (API level 21).
 * Google Play Service installed.
 
 
