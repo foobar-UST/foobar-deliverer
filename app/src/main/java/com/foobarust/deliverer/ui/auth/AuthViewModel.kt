@@ -1,7 +1,6 @@
 package com.foobarust.deliverer.ui.auth
 
 import android.content.Context
-import android.util.Log
 import androidx.lifecycle.viewModelScope
 import com.foobarust.deliverer.R
 import com.foobarust.deliverer.states.Resource
@@ -41,8 +40,6 @@ class AuthViewModel @Inject constructor(
         // Observe auth state
         viewModelScope.launch {
             getUserAuthStateUseCase(Unit).collect {
-                Log.d(TAG, "authstate: $it")
-
                 when (it) {
                     is AuthState.Authenticated -> {
                         _navigateToMain.offer(Unit)
