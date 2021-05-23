@@ -39,7 +39,7 @@ import javax.inject.Inject
  */
 
 private const val LOCATION_REQUEST_INTERVAL = 5000L
-private const val LOCATION_UPLOAD_INTERVAL = 10000L
+private const val LOCATION_UPLOAD_INTERVAL = 5000L
 
 @AndroidEntryPoint
 class LocationService : Service() {
