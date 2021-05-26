@@ -15,7 +15,8 @@ out/
 build/
 
 # Local configuration file (sdk path, etc)
-#local.properties
+local.properties
+google-services.json
 
 # Eclipse project files
 .classpath
