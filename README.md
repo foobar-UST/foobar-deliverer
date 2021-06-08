@@ -47,3 +47,15 @@ git clone https://github.com/foobar-UST/foobar-deliverer.git
 ```console
 ./gradlew licenseReleaseReport
 ```
+
+## Screenshots
+<div>
+    <img src="./screenshots/deliver_login.png" alt="drawing" width="200"/>
+    <img src="./screenshots/deliver_jobs.png" alt="drawing" width="200"/>
+    <img src="./screenshots/deliver_job_detail.png" alt="drawing" width="200"/>
+</div> 
+<div>
+    <img src="./screenshots/deliver_in_transit.png" alt="drawing" width="200"/>
+    <img src="./screenshots/deliver_customers.png" alt="drawing" width="200"/>
+    <img src="./screenshots/deliver_confirm.png" alt="drawing" width="200"/>
+</div> 
